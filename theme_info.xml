@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 	<theme-info xmlns="http://www.elkarte.net/xml/theme-info" xmlns:elk="http://www.elkarte.net/">
 		<!-- For the id, always use something unique - put your name, a colon, and then the package name. -->
-		<id>elk:Seperation</id>
+		<id>elk:Separation</id>
 		<version>1.0 Beta</version>
 		<!-- Theme name, used purely for aesthetics. -->
-		<name>Seperation</name>
+		<name>Separation</name>
 		<!-- Author: your email address or contact information. The name attribute is optional. -->
 		<author name="Your Name">info@youremailaddress.tld</author>
 		<!-- Website... where to get updates and more information. -->
