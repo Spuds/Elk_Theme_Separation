@@ -270,12 +270,12 @@ function template_build_poster_div($message, $ignoring = false)
 							<li class="billboard poster_online">
 								<a href="' . $scripturl . '?action=pm;sa=send;u=' . $message['member']['id'] . '" title="' . $txt['send_message'] . '"><i class="fa fa-comments fa-2x"></i></a>
 							</li>';
-				}
+			}
 			// Not allowed to send a PM, online status disabled and not from a guest.
 			elseif (!$context['can_send_pm'] && !empty($modSettings['onlineEnable']) && !$message['member']['is_guest'])
 				$poster_div .= '
 							<li class="billboard poster_online">
-								<span class="nolink">' . ($message['member']['online']['is_online'] ? $txt['online'] : $txt['offline']) . ' <i class="fa fa-comments fa-2x '. (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '</span>
+								<i class="fa fa-comments fa-2x '. (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '" title="' . ($message['member']['online']['is_online'] ? $txt['online'] : $txt['offline']) . '"></i>
 							</li>';
 
 			// Show how many posts they have made.
