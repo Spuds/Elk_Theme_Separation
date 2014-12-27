@@ -2237,7 +2237,6 @@ div.core_posts {
 	line-height: 1.667em;
 	padding: 0;
 }
-/* @todo - Add an h3 for a11y? Breaks Stoopidfish. Bleh. :P */
 .poster .name {
 	overflow: hidden;
 	margin-top: -0.4em;
@@ -2256,6 +2255,10 @@ div.core_posts {
 .poster .name {
 	white-space: normal;
 	word-break: normal;
+}
+.poster_container {
+	float: left;
+	width: 14em;
 }
 /* Drop menu for the poster info. */
 .poster .listlevel1.sfhover .menulevel2, .poster .listlevel1:hover .menulevel2 {
@@ -4185,11 +4188,15 @@ dl.no_members {
 
 /* This one does 1024 screens at default font size. */
 @media screen and (max-width: 64em) {
+	.topic_info {
+		width: 60%;
+	}
 	.topic_latest {
 		min-width: 20em;
 	}
 	.topic_latest.relative {
 		min-width: 15em;
+		position: relative;
 	}
 	.board_latest {
 		min-width: 22em;
@@ -4198,7 +4205,7 @@ dl.no_members {
 	.lastpost_link {
 		display: block;
 	}
-	.board_stats, .topic_stats {
+	.board_stats {
 		display: none;
 	}
 	.bbc_img, .elk_video {
@@ -4224,6 +4231,14 @@ dl.no_members {
 }
 /* This one does 800 screens at default font size. */
 @media screen and (max-width: 50em) {
+	.topic_stats {
+		display: none;
+	}
+	.img_last_post {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
 	dd input, dd select, dd textarea {
 		width: 100% !important;
 		max-width: 100% !important;
@@ -4245,7 +4260,7 @@ dl.no_members {
 		display: none;
 	}
 	.fred {
-		display:none;
+		display: none;
 	}
 	#main_menu .linklevel1 {
 		margin-right: 5px;
@@ -4333,20 +4348,23 @@ dl.no_members {
 	#password_login select {
 		display: none;
 	}
-	.poster {
-		width: 7em;
+	.poster, .poster_container {
+		width: 12em;
+	}	
+	.poster_avatar a {
+		padding: 0;
 	}
-	.poster .poster_online {
-		display: none;
+	.poster .name {
+		white-space: nowrap;
+	}
+	.poster .listlevel1 {
+		margin: 0;
 	}
 	.postarea {
 		margin: 0 0 0 6em;
 	}
 	.avatar, .avatar.avatarresize {
 		max-width: 7em;
-	}
-	.poster_avatar a {
-		padding: 0;
 	}
 	.quickbuttons .modified {
 		display: block;
@@ -4676,25 +4694,22 @@ dl.no_members {
 		text-overflow: clip;
 	}
 	.poster .listlevel1 {
-		float: left;
-		display: inline-block;
+		padding: 5px 0 0 0;
 	}
 	.poster li.membergroup {
 		display: none;
-	}
+	}	.poster_container {		width: 10em;
+		margin-right: 10px;	}
 	.poster li.avatar {
-		float: left;
 	}
 	.poster .subsections {
 		max-width: 200px;
 		max-height: 1.5em;
-		float: right;
-		text-align: right;
 	}
 	.poster .membergroup {
 		float: right;
 	}
-	.poster .title, .poster .poster_online, .icons img {
+	.poster .title, .icons img {
 		display: none;
 	}
 	.poster:after, .posterarea:before {
