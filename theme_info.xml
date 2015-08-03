@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-	<theme-info xmlns="http://www.elkarte.net/xml/theme-info" xmlns:elk="http://www.elkarte.net/">
+	<theme-info xmlns="http://www.elkarte.net/site/theme-info" xmlns:elk="http://www.elkarte.net/">
 		<!-- For the id, always use something unique - put your name, a colon, and then the package name. -->
-		<id>elk:Separation</id>
+		<id>spuds:Separation</id>
 		<version>1.0</version>
 		<!-- Theme name, used purely for aesthetics. -->
 		<name>Separation</name>
 		<!-- Author: your email address or contact information. The name attribute is optional. -->
-		<author name="Your Name">info@youremailaddress.tld</author>
+		<author name="Spuds">spuds@spudsdesign.com</author>
 		<!-- Website... where to get updates and more information. -->
-		<website>http://www.yourdomain.tld/</website>
+		<website>http://www.spudsdesign.com/</website>
 		<!-- Template layers to use, defaults to "html,body". -->
 		<layers>html,body</layers>
 		<!-- Templates to load on startup. Default is "index". -->
