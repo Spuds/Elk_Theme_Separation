@@ -186,6 +186,10 @@ input, .input_text, button, select {
 }
 select {
 	padding: 0 0 0 2px;
+	max-width: 95%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .input_text {
 	font-size: .876em;
@@ -197,6 +201,10 @@ select option {
 select#cat, select#suggestions, select#file , input[type="file"] {
 	height: auto;
 	max-height: none;
+}
+.select_multiple {
+	min-height: 10em;
+	height: auto;
 }
 input[type="number"] {
 	padding: 0 0 0 6px;
@@ -695,13 +703,20 @@ div.windowbg, div.windowbg2 {
 	color: inherit;
 	font: inherit;
 	vertical-align: top;
-	padding: 0 1em 0 0;
+	padding: 0 0.5em;
 }
 .bbc_table th {
 	color: inherit;
 	font: inherit;
 	font-weight: bold;
-	padding: 0 1em 0 0;
+	padding: 0 0.5em;
+}
+/* Styling for bbc tables inside posts */
+.inner > .bbc_table_container > .bbc_table {
+	border-collapse: collapse;
+}
+.inner > .bbc_table_container > .bbc_table th {
+	text-align: center;
 }
 .bbc_u {
 	text-decoration: underline;
@@ -831,6 +846,8 @@ a.bbc_link {
 }
 #siteslogan {
 	clear: both;
+	font-size: 0.65em;
+	display: block;
 }
 /* Tweak the logo */
 #logo {
@@ -1164,6 +1181,10 @@ a.bbc_link {
 	border: none;
 	white-space: nowrap;
 }
+.linktree:first-child a {
+	height: 2em;
+	padding: 0 6px;
+}
 .linktree:last-child {
 	max-width: 25em;
 }
@@ -1367,7 +1388,7 @@ a.bbc_link {
 .like_button:before, .likes_button:before, .unlike_button:before {
 	background-position: 0 -480px;
 }
-.unlike_button:hover:before {
+.unlike_button:before {
 	background-position: 0 -408px;
 }
 .like_button:hover:before {
@@ -1406,9 +1427,10 @@ a.bbc_link {
 /* Necessary for some browsers to keep the pages all on the same line */
 .linavPages {
 	float: left;
+	margin: 0px 4px 0px 0px;
 }
 .selectbox, .pagelinks {
-	margin: 5px 0 0 0;
+	margin: 5px 5px 0px;
 	font-size: 0.857em;
 }
 /* @todo - Styling will need a bit more thought here. */
@@ -1688,7 +1710,7 @@ dl.settings label {
 	float: left;
 }
 .board_name {
-	padding: 0 0 1px 0;
+	padding: 0 0 1px 56px;
 	font-size: 1.143em;
 }
 .board_info .board_description, .board_info .moderators {
@@ -3911,6 +3933,7 @@ dl.no_members {
 	position: absolute;
 	display: none;
 	padding: 0.5em;
+	max-width: 12em;
 }
 #mlsearch_options.nojs {
 	display: none;
@@ -3928,6 +3951,7 @@ dl.no_members {
 }
 #mlsearch_options .mlsearch_option {
 	padding: 0.2em 0;
+	line-height: 2em;
 }
 
 
@@ -4313,7 +4337,7 @@ dl.no_members {
 		min-width: 20em;
 	}
 	.board_name {
-		margin: 12px 0 0 56px;
+		margin: 12px 0 0;
 	}
 	.board_lastposter {
 		display: block;
@@ -4621,7 +4645,8 @@ dl.no_members {
 		word-wrap: break-word;
 	}
 	.board_name {
-		margin: 0 0 0 35px;
+		margin: 0;
+		padding: 0 0 1px 35px;
 	}
 	.board_info:after {
 		display: block;
@@ -4740,10 +4765,10 @@ dl.no_members {
 	.forumposts .windowbg, .forumposts .windowbg2 {
 		margin-bottom: 6px;
 	}
-	#moderationbuttons, a.linklevel1.button_strip_notify,
+	a.linklevel1.button_strip_notify,
 	a.linklevel1.button_strip_print, a.linklevel1.button_strip_send, .inline_mod_check,
 	a.linklevel1.quotetonew_button, a.linklevel1.button_strip_post_poll,
-	a.linklevel1.post_options, .keyinfo .post_subject, li.listlevel1.quickmod_select_all,
+	.keyinfo .post_subject, li.listlevel1.quickmod_select_all,
 	#collapse_button, p.inline.membergroups {
 		display: none !important;
 	}
@@ -4883,5 +4908,28 @@ dl.no_members {
 	#confirm_buttons .button_submit {
 		height: inherit;
 		max-height: none;
+	}
+	.fa.hamburger_30 {
+		padding-top: 0.1em;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+	.fa.hamburger_30:before {
+		margin: 0.2em;
+	}
+	#display_jump_to {
+		display: inline-block;
+	}
+	.hide_30.hamburger_30_target {
+		left: -9999px;
+		position: absolute;
+	}
+	.fa.hamburger_30.visible {
+		display: none;
+	}
+	.hide_30.hamburger_30_target.visible {
+		left: auto;
+		position: relative;
 	}
 }
