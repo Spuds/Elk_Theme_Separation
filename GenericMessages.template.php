@@ -252,7 +252,7 @@ function template_build_poster_div($message, $ignoring = false)
 				$poster_div .= '
 							<li class="billboard poster_online">
 								<a class="' . ($context['user']['unread_messages'] > 0 ? 'infotext' : '') . '" href="' . $scripturl . '?action=pm">
-									<i class="fa fa-comments fa-2x"></i>
+									<i class="fa fa-comments-o  fa-2x"></i>
 									<p>' . ($context['user']['unread_messages'] > 0 ? $context['user']['unread_messages'] : '0') . '</p>
 								</a>
 							</li>';
@@ -263,33 +263,33 @@ function template_build_poster_div($message, $ignoring = false)
 				if (!empty($modSettings['onlineEnable']))
 					$poster_div .= '
 							<li class="billboard poster_online">
-								<a href="' . $scripturl . '?action=pm;sa=send;u=' . $message['member']['id'] . '" title="' . $message['member']['online']['member_online_text'] . '"><i class="fa fa-comments fa-2x ' . (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '"></i></a>
+								<a href="' . $scripturl . '?action=pm;sa=send;u=' . $message['member']['id'] . '" title="' . $message['member']['online']['member_online_text'] . '"><i class="fa fa-comments-o fa-2x ' . (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '"></i></a>
 							</li>';
 				else
 					$poster_div .= '
 							<li class="billboard poster_online">
-								<a href="' . $scripturl . '?action=pm;sa=send;u=' . $message['member']['id'] . '" title="' . $txt['send_message'] . '"><i class="fa fa-comments fa-2x"></i></a>
+								<a href="' . $scripturl . '?action=pm;sa=send;u=' . $message['member']['id'] . '" title="' . $txt['send_message'] . '"><i class="fa fa-comments-o fa-2x"></i></a>
 							</li>';
 			}
 			// Not allowed to send a PM, online status disabled and not from a guest.
 			elseif (!$context['can_send_pm'] && !empty($modSettings['onlineEnable']) && !$message['member']['is_guest'])
 				$poster_div .= '
 							<li class="billboard poster_online">
-								<i class="fa fa-comments fa-2x '. (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '" title="' . ($message['member']['online']['is_online'] ? $txt['online'] : $txt['offline']) . '"></i>
+								<i class="fa fa-comments-o fa-2x '. (!empty($message['member']['online']['is_online']) ? 'successtext' : 'stdtext') . '" title="' . ($message['member']['online']['is_online'] ? $txt['online'] : $txt['offline']) . '"></i>
 							</li>';
 
 			// Show how many posts they have made.
 			if (!isset($context['disabled_fields']['posts']))
 				$poster_div .= '
 							<li class="billboard postcount">
-								<i class="fa fa-line-chart fa-2x" title="' . $txt['member_postcount'] . '"></i>
+								<i class="fa fa-stack-overflow fa-2x" title="' . $txt['member_postcount'] . '"></i>
 								<p>' . $message['member']['posts'] . '</p>
 							</li>';
 
 			if (!isset($context['disabled_fields']['likes']))
 				$poster_div .= '
 							<li class="billboard likecount">
-								<i class="fa fa-thumbs-up fa-2x" title="' . $txt['likes'] . '"></i>
+								<i class="fa fa-thumbs-o-up fa-2x" title="' . $txt['likes'] . '"></i>
 								<p>' . $message['member']['likes']['received'] . '</p>
 							</li>';
 		}
