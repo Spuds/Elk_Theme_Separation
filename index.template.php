@@ -11,7 +11,7 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.0.6
+ * @version 1.0.10
  *
  */
 
@@ -53,12 +53,6 @@ function template_init()
 
 		// The version this template/theme is for. This should probably be the version of the forum it was created for.
 		'theme_version' => '1.0',
-
-		// Use plain buttons - as opposed to text buttons?
-		'use_buttons' => true,
-
-		// Show sticky and lock status separate from topic icons?
-		'separate_sticky_lock' => true,
 
 		// Set the following variable to true if this theme requires the optional theme strings file to be loaded.
 		'require_theme_strings' => false,
@@ -283,7 +277,7 @@ function template_login_bar()
 				<h2 class="category_header hdicon cat_img_login">
 					', $txt['login'], '
 				</h2>
-				<div class="roundframe">
+				<div class="content roundframe">
 					<form action="', $scripturl, '?action=login2;quicklogin" method="post" accept-charset="UTF-8" ', empty($context['disable_login_hashing']) ? ' onsubmit="hashLoginPassword(this, \'' . $context['session_id'] . '\');"' : '', '>
 						<div id="password_login">
 							<input type="text" name="user" size="10" class="input_text" placeholder="', $txt['username'], '" />
@@ -310,8 +304,8 @@ function template_login_bar()
 					</form>
 				</div>
 			</div>
-			<div id="toggle" class="tab">
-				<a id="open" class="open" href="#">Log In | Register</a>
+			<div id="toggle" class="paneltab">
+				<a id="open" class="open" href="#">', $txt['login'], ' | ', $txt['register'], '</a>
 				<a id="close" style="display: none;" class="close" href="#">Close Panel</a>
 			</div>
 		</div>';
@@ -714,7 +708,7 @@ function template_basicicons_legend()
 			' . (!empty($modSettings['pollMode']) ? '<span class="topicicon img_poll"> </span>' . $txt['poll'] : '') . '
 		</p>
 		<p>
-			<span class="topicicon img_locked"> </span>' . $txt['locked_topic'] . '<br />' . ($modSettings['enableStickyTopics'] == '1' ? '
+			<span class="topicicon img_locked"> </span>' . $txt['locked_topic'] . '<br />' . (!empty($modSettings['enableStickyTopics']) ? '
 			<span class="topicicon img_sticky"> </span>' . $txt['sticky_topic'] . '<br />' : '') . '
 		</p>';
 }

@@ -2131,25 +2131,25 @@ div.bbc_footnotes .meaction {
 }
 
 /* Panel Tab/button */
-.tab {
+.paneltab {
 	position: absolute;
 	right: 120px;
 	z-index: 1;
 	padding: 0 10px;
 	border-radius: 0;
-	background: #222222;
+	background: #4993C5 ;
 	text-align: center;
 	white-space: nowrap;
 }
 
-.tab a:hover {
-	color: #222222;;
+.paneltab a:hover {
+	color: #444444;
 }
 
-.tab a.open, .tab a.close {
+.paneltab a.open, .paneltab a.close {
 	display: block;
 	width: 100px;
-	color: #555555;
+	color: #222222;
 	cursor: pointer;
 }
 
@@ -2170,7 +2170,6 @@ div.bbc_footnotes .meaction {
 	display: none;
 	overflow: hidden;
 	width: 100%;
-	height: 100px;
 	border: none;
 	background: #FAFAFA;
 }

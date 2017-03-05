@@ -11,7 +11,7 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.0.3
+ * @version 1.0.10
  *
  */
 
@@ -38,7 +38,7 @@ function template_report_sent_above()
 }
 
 /**
- * Topic informations, descriptions, etc.
+ * Topic information, descriptions, etc.
  */
 function template_messages_informations_above()
 {
@@ -356,7 +356,7 @@ function template_messages()
 }
 
 /**
- * Closes the topic informations, descriptions, etc. divs and forms
+ * Closes the topic information, descriptions, etc. divs and forms
  */
 function template_messages_informations_below()
 {
@@ -500,7 +500,7 @@ function template_quickreply_below()
 
 	// Finally enable the quick reply quote function
 	echo '
-		<script><!-- // --><![CDATA[
+		<script>
 			var oQuickReply = new QuickReply({
 				bDefaultCollapsed: ', empty($context['minmax_preferences']['qreply']) ? 'false' : 'true', ',
 				iTopicId: ', $context['current_topic'], ',
@@ -528,7 +528,7 @@ function template_quickreply_below()
 					sCookieName: \'elk_qreply\'
 				}
 			});
-		// ]]></script>';
+		</script>';
 
 	// Spell check for quick modify and quick reply (w/o the editor)
 	if ($context['show_spellchecking'])
@@ -540,7 +540,7 @@ function template_quickreply_below()
 
 	// Quick moderation options
 	echo '
-			<script><!-- // --><![CDATA[';
+			<script>';
 
 	if (!empty($options['display_quick_mod']) && $options['display_quick_mod'] == 1 && $context['can_remove_post'])
 		echo '
@@ -632,7 +632,7 @@ function template_quickreply_below()
 				ignore_toggles([', implode(', ', $ignoredMsgs), '], ', JavaScriptEscape($txt['show_ignore_user_post']), ');';
 
 	echo '
-			// ]]></script>';
+			</script>';
 }
 
 /**
@@ -795,7 +795,7 @@ function template_pages_and_buttons_below()
 	// Show the jump-to box, or actually...let Javascript do it.
 	echo '
 			<div id="display_jump_to">&nbsp;</div>
-			<script><!-- // --><![CDATA[
+			<script>
 				aJumpTo[aJumpTo.length] = new JumpTo({
 					sContainerId: "display_jump_to",
 					sJumpToTemplate: "<label class=\"smalltext\" for=\"%select_id%\">', $context['jump_to']['label'], ':<" + "/label> %dropdown_list%",
@@ -808,13 +808,13 @@ function template_pages_and_buttons_below()
 					sCatPrefix: "",
 					sGoButtonLabel: "', $txt['go'], '"
 				});
-			// ]]></script>';
+			</script>';
 
 	// Tooltips for likes
 	echo '
-			<script><!-- // --><![CDATA[
+			<script>
 				$(".like_button, .unlike_button, .likes_button").SiteTooltip({hoverIntent: {sensitivity: 10, interval: 150, timeout: 50}});
-			// ]]></script>';
+			</script>';
 }
 
 /**
@@ -855,31 +855,23 @@ function template_display_attachments($message, $ignoring)
 
 		if ($attachment['is_image'])
 		{
-			echo '
-										<div class="attachment_thumb">';
-
 			if ($attachment['thumbnail']['has_thumb'])
 				echo '
-											<a href="', $attachment['href'], ';image" id="link_', $attachment['id'], '" onclick="', $attachment['thumbnail']['javascript'], '"><img src="', $attachment['thumbnail']['href'], '" alt="" id="thumb_', $attachment['id'], '" /></a>';
+											<a href="', $attachment['href'], ';image" id="link_', $attachment['id'], '" onclick="', $attachment['thumbnail']['javascript'], '">
+												<img class="attachment_image" src="', $attachment['thumbnail']['href'], '" alt="" id="thumb_', $attachment['id'], '" />
+											</a>';
 			else
 				echo '
-											<img src="' . $attachment['href'] . ';image" alt="" style="width:' . $attachment['width'] . 'px; height:' . $attachment['height'] . 'px;"/>';
-
-			echo '
-										</div>';
+											<img class="attachment_image" src="', $attachment['href'], ';image" alt="" style="width:', $attachment['width'], 'px; height:', $attachment['height'], 'px;" />';
 		}
 
 		echo '
-										<div class="attachment_name">
-											<a href="' . $attachment['href'] . '"><img src="' . $settings['images_url'] . '/icons/clip.png" class="centericon" alt="*" />&nbsp;' . $attachment['name'] . '</a> ';
+											<a href="', $attachment['href'], '" class="attachment_name">', $attachment['name'], '</a>
+											<span class="attachment_details">', $attachment['size'], ($attachment['is_image'] ? ', ' . $attachment['real_width'] . 'x' . $attachment['real_height'] . ' - ' . sprintf($txt['attach_viewed'], $attachment['downloads']) : ' ' . sprintf($txt['attach_downloaded'], $attachment['downloads'])) . '</span>';
 
 		if (!$attachment['is_approved'] && $context['can_approve'])
 			echo '
 											<a class="linkbutton" href="', $scripturl, '?action=attachapprove;sa=approve;aid=', $attachment['id'], ';', $context['session_var'], '=', $context['session_id'], '">', $txt['approve'], '</a>&nbsp;|&nbsp;<a class="linkbutton" href="', $scripturl, '?action=attachapprove;sa=reject;aid=', $attachment['id'], ';', $context['session_var'], '=', $context['session_id'], '">', $txt['delete'], '</a>';
-		echo '
-											<br />', $attachment['size'], ($attachment['is_image'] ? ', ' . $attachment['real_width'] . 'x' . $attachment['real_height'] . '<br />' . sprintf($txt['attach_viewed'], $attachment['downloads']) : '<br />' . sprintf($txt['attach_downloaded'], $attachment['downloads'])), '
-										</div>';
-
 		echo '
 									</div>';
 	}
