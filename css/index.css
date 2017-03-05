@@ -63,43 +63,6 @@ a:hover, a.new_win:hover {
 	cursor: pointer;
 }
 
-@font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Open Sans Regular'),
-	local('Open-Sans-Regular'),
-	url('OpenSans-Regular.woff') format('woff'),
-	url('OpenSans-Regular.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Open Sans Italic'), local('Open-Sans-Italic'),
-	url('OpenSans-Italic.woff') format('woff'),
-	url('OpenSans-Italic.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Open Sans Bold'), local('Open-Sans-Bold'),
-	url('OpenSans-Bold.woff') format('woff'),
-	url('OpenSans-Bold.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 600;
-	src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
-	url('OpenSans-Semibold.woff') format('woff'),
-	url('OpenSans-Semibold.ttf') format('truetype');
-}
-
 body {
 	margin: 0;
 	padding: 0 0 0 0;
@@ -522,7 +485,7 @@ em {
 /* Styles for main headers. */
 .category_header, .forum_category .category_header {
 	padding: 4px 10px 2px 10px;
-	font-size: 1.214em;
+	font-size: 1.143em;
 	line-height: 1.8em;
 }
 
@@ -2131,6 +2094,7 @@ dl.settings label {
 .board_name {
 	padding: 0 0 1px 56px;
 	font-size: 1.143em;
+	font-weight: 600;
 }
 
 .board_info .board_description, .board_info .moderators {

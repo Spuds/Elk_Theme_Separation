@@ -47,7 +47,7 @@
 a, a:link, a:visited,
 	/* Links that open in a new window. */
 a.new_win:link, a.new_win:visited {
-	color: #555555;
+	color: #304B24;
 	text-decoration: none;
 }
 
@@ -59,12 +59,11 @@ a:hover, a.new_win:hover {
 /* Stop white band under footer on short pages. */
 /* This color should match $FOOTER background. */
 html {
-	background: #f0f0f0;
 	background: #f6f8f9;
 }
 
 body {
-	color: #555555;
+	color: #333333;
 }
 
 fieldset {
@@ -93,7 +92,7 @@ input, button, select, textarea, .editor {
 	border: 1px solid #CCCCCC;
 	border-radius: 0;
 	background: #FFFFFF;
-	color: #666666;
+	color: #333333;
 }
 
 input:hover, textarea:hover, button:hover, select:hover {
@@ -102,6 +101,7 @@ input:hover, textarea:hover, button:hover, select:hover {
 
 textarea:hover, .editor:hover {
 	background: #FBFBFB;
+	color: #444;
 }
 
 input:focus, textarea:focus, button:focus, select:focus, .editor:focus {
@@ -209,7 +209,8 @@ strong {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	background: #313131 linear-gradient(to bottom, #4993C5 0%, #8CB5D9 50%, #8CB5D9 50%, #4993C5 100%);
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 1px 4px rgba(0, 0, 0, 0.15);
-	color: #003366;
+	color: #1C4A77;
+	font-weight: 600;
 }
 
 /* Single ones with a touch of radius. */
@@ -246,12 +247,12 @@ strong {
 /* Nicer than default blue. Needs two separate rules. */
 ::-moz-selection {
 	background: #D8FFDF;
-	color: #555555;
+	color: #444444;
 }
 
 ::selection {
 	background: #D8FFDF;
-	color: #555555;
+	color: #444444;
 }
 
 /* Other highlighted text, such as search results. */
@@ -350,12 +351,12 @@ strong {
 /* Styling for BBC tags */
 .bbc_link:link, .bbc_link:visited {
 	box-shadow: 0 -1px 0 #CEDCCB inset;
-	color: #555555;
+	color: #377828;
 }
 
 .bbc_link:hover {
 	box-shadow: 0 -1px 0 #66AA55 inset;
-	color: #555555;
+	color: #377828;
 	text-decoration: none;
 }
 
@@ -447,7 +448,7 @@ div.bbc_footnotes .meaction {
 /* Maintenance mode warning. */
 .notice {
 	color: #A80000;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 #search_form {
@@ -513,22 +514,20 @@ div.bbc_footnotes .meaction {
 }
 
 #forumtitle > a {
-	color: #777777;
-	text-shadow: 1px 1px 0 #FFFFFF;
 	color: #848F9D;
 	text-shadow: 1px 1px 0 #000000;
 }
 
 /* News section. */
 #news {
-	font-size: 0.929em;
+	font-size: 1em;
 }
 
 #news > h2 {
 	float: left;
 	margin: -2px 1em 0 0;
 	height: 1em;
-	color: #555555;
+	color: #444444;
 	font-weight: 700;
 	font-variant: small-caps;
 	font-size: 1.286em;
@@ -548,7 +547,7 @@ div.bbc_footnotes .meaction {
 	border: 1px solid #CCCCCC;
 	background: #FFFFFF;
 	box-shadow: 1px 2px 3px #EEEEEE;
-	color: #666666;
+	color: #333333;
 	resize: vertical;
 }
 
@@ -738,7 +737,7 @@ div.bbc_footnotes .meaction {
 /* Levels 2 and 3 drop menus: link or button. */
 #main_menu .linklevel2:link, #main_menu .linklevel2:visited, #main_menu .linklevel3:link, #main_menu .linklevel3:visited {
 	border: 1px solid transparent;
-	color: #666666;
+	color: #222222;
 }
 
 /* Admin menu icons. */
@@ -770,7 +769,7 @@ div.bbc_footnotes .meaction {
 	position: absolute;
 	top: 0;
 	right: 16px;
-	color: #777777;
+	color: #666666;
 	content: "\2192";
 	font-size: 1.286em;
 }
@@ -1128,7 +1127,7 @@ div.bbc_footnotes .meaction {
 /* The quick buttons. */
 /* ------------------------------------------------------- */
 .quickbuttons .modified {
-	color: #777777;
+	color: #666666;
 }
 
 /* Cancel generic border-radius. */
@@ -1292,15 +1291,16 @@ div.bbc_footnotes .meaction {
 }
 
 .board_name > a {
-	color: #555555;
+	color: #1C4A77;
+	font-weight: 600;
 }
 
 .board_stats {
-	color: #777777;
+	color: #555555;
 }
 
 .lastpost_link > a {
-	color: #555555;
+	color: #377828;
 }
 
 .board_latest strong {
@@ -1312,7 +1312,7 @@ div.bbc_footnotes .meaction {
 }
 
 .childboard_row h4, .board_new_posts {
-	color: #777777;
+	color: #555555;
 	font-weight: 700;
 }
 
@@ -1322,7 +1322,7 @@ div.bbc_footnotes .meaction {
 }
 
 .ic_section_header > a {
-	color: #666666;
+	color: #333333;
 }
 
 #ic_recentposts td, #ps_recentposts td, #ps_recenttopics td {
@@ -1330,7 +1330,7 @@ div.bbc_footnotes .meaction {
 }
 
 .recentpost > strong > a, .inline > strong > a {
-	color: #555555;
+	color: #46823c;
 }
 
 #expanded_pages_container a {
@@ -1385,7 +1385,7 @@ div.bbc_footnotes .meaction {
 }
 
 .topic_name h4 a {
-	color: #555555;
+	color: #326D23;
 }
 
 .sticky_row .topic_name h4 a, .locked_row.sticky_row .topic_name h4 a {
@@ -1393,7 +1393,7 @@ div.bbc_footnotes .meaction {
 }
 
 .locked_row .topic_name h4 a {
-	color: #777777;
+	color: #555555;
 }
 
 .sticky_row .topic_name h4 a.new_posts, .locked_row.sticky_row .topic_name h4 a.new_posts, .locked_row .topic_name h4 a.new_posts {
@@ -1401,7 +1401,7 @@ div.bbc_footnotes .meaction {
 }
 
 .topic_stats {
-	color: #777777;
+	color: #666666;
 }
 
 .qaction_row {
@@ -1471,7 +1471,7 @@ div.bbc_footnotes .meaction {
 }
 
 .poster .name {
-	color: #555555;
+	color: #46823c;
 }
 
 /* Drop menu for the poster info. */
@@ -1515,12 +1515,12 @@ div.bbc_footnotes .meaction {
 }
 
 .post_subject {
-	color: #777777;
+	color: #555555;
 }
 
 /* @todo - Move strong tag outside anchor. Will save css. */
 .keyinfo h5 a, .keyinfo h5 a strong {
-	color: #555555;
+	color: #46823c;
 }
 
 .inner {
@@ -2095,17 +2095,9 @@ div.bbc_footnotes .meaction {
 	border: none;
 }
 
-/* Test code - an attempt to make recent posts less overwhelming. */
-#recentposts .inner {
-	position: relative;
-	overflow: hidden;
-	height: 7.2em;
-	resize: vertical;
-}
-
 #recentposts .inner blockquote {
 	overflow: hidden;
-	height: 1.5em;
+	height: 5em;
 }
 
 /* floating error box */
@@ -2244,7 +2236,7 @@ div.bbc_footnotes .meaction {
 	}
 
 	.indicator[data-icon]:before {
-		color: #555555;
+		color: #42872F;
 	}
 
 	#main_menu .linklevel1 {
@@ -2280,7 +2272,7 @@ div.bbc_footnotes .meaction {
 	}
 
 	#gotop:hover, #gobottom:hover {
-		color: #555555;
+		color: #444444;
 		text-decoration: none;
 		opacity: 1;
 	}

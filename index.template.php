@@ -139,6 +139,10 @@ function template_html_above()
 		echo '
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />';
 
+	// Load the fonts
+	echo '
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">';
+
 	// load in any css from addons or themes so they can overwrite if wanted
 	template_css();
 
