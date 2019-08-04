@@ -1,19 +1,28 @@
 html, body, p, code:before, table {
 	margin: 0;
 	padding: 0 0 0 0;
-	color: #111;
+
+	color: #111111;
 }
+
 html {
 	overflow: auto;
+
 	height: 100%;
+
 	-webkit-overflow-scrolling: touch;
 }
+
 body {
 	position: relative;
+
 	overflow: auto;
+
 	min-height: 100%;
+
 	word-wrap: break-word;
 }
+
 ul, ol {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -23,80 +32,112 @@ ul, ol {
 
 table, td {
 	min-width: 1em;
-	border: 1px dotted #000;
+
 	empty-cells: show;
+
+	border: 1px dotted #000000;
 }
 
 code:before {
+	font-size: 1.2em;
+
 	position: absolute;
-	content: 'Code:';
 	top: -1.7em;
 	left: 0;
-	font-size: 1.2em;
+
+	content: "Code:";
 	text-align: left;
 }
+
 code {
-	margin-top: 1.5em;
-	position: relative;
-	background: #f3f3f3;
-	border: 1px solid #dfdfdf;
-	white-space: pre;
-	padding: .25em;
 	font-family: "DejaVu Sans Mono", Monaco, Consolas, monospace;
 	font-size: 0.7em;
-	border-top: 2px solid #bbb;
-	border-bottom: 3px solid #aaa;
+
+	position: relative;
+
 	display: block;
+
+	margin-top: 1.5em;
+	padding: 0.25em;
+
+	white-space: pre;
+
+	border: 1px solid #DFDFDF;
+	border-top: 2px solid #BBBBBB;
+	border-bottom: 3px solid #AAAAAA;
+	background: #F3F3F3;
 }
+
 blockquote {
 	overflow: auto;
+
 	margin: 0 0 1em 0;
 	padding: 6px 10px;
-	box-shadow: 2px 2px 2px #ddd;
-	border: 1px solid #ccc;
-	background: #fff;
+
+	border: 1px solid #CCCCCC;
+	background: #FFFFFF;
+	box-shadow: 2px 2px 2px #DDDDDD;
 }
+
 blockquote cite, code cite {
-	border-bottom: none;
-	background: #fff;
-	color: #555;
 	font-size: 0.786em;
-	padding: 0 0 4px;
+
 	display: block;
+
+	padding: 0 0 4px;
+
+	color: #555555;
+	border-bottom: none;
+	background: #FFFFFF;
 }
+
 code cite {
+	font-size: 1.3em;
+
 	position: relative;
 	top: -1.9em;
-	font-size: 1.3em;
-	margin-left: 2.7em;
+
 	margin-bottom: -1.5em;
+	margin-left: 2.7em;
 }
+
 /* Will correctly colour down to seventh level of nested quotes in editor. Can be extended easily enough. */
-body>blockquote, body>blockquote>blockquote, body>blockquote>blockquote>blockquote>blockquote,
-body>blockquote>blockquote>blockquote>blockquote>blockquote>blockquote {
-	background: #fff;
+body > blockquote, body > blockquote > blockquote, body > blockquote > blockquote > blockquote > blockquote,
+body > blockquote > blockquote > blockquote > blockquote > blockquote > blockquote {
+	background: #FFFFFF;
 }
-body>blockquote>blockquote>cite, body>blockquote>blockquote>blockquote>blockquote>cite,
-body>blockquote>blockquote>blockquote>blockquote>blockquote>blockquote>cite {
-	background: #fff;
+
+body > blockquote > blockquote > cite, body > blockquote > blockquote > blockquote > blockquote > cite,
+body > blockquote > blockquote > blockquote > blockquote > blockquote > blockquote > cite {
+	background: #FFFFFF;
 }
+
 blockquote cite a:link, blockquote cite a:visited {
 	text-decoration: none;
-	color: #555;
+
+	color: #555555;
 }
+
 div {
 	min-height: 1em; /*height:auto !important; height: 1em;*/
 }
+
 h1, h2, h3, h4, h5, h6 {
-	padding: 0; margin: 0;
+	margin: 0;
+	padding: 0;
 }
+
 aside:before {
+	font-size: 0.8em;
+
 	content: "[*]";
 	vertical-align: super;
-	font-size: .8em;
 }
+
 aside {
-	display: inline;
-	color: #50aa3a;
 	font-weight: 700;
+
+	display: inline;
+
+	color: #50AA3A;
 }

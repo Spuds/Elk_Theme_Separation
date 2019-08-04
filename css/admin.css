@@ -37,24 +37,27 @@
 #support_credits, #admin_newsletters,
 #core_features, #generate_reports_type,
 #groupForm, #mailqueue_stats, #manage_maintenance,
-#new_group, #view_group, #admin_form_wrapper, .action_admin .generic_list_wrapper{
+#new_group, #view_group, #admin_form_wrapper, .action_admin .generic_list_wrapper {
+	overflow: auto;
+
 	margin: 12px 0 0 0;
 	padding: 8px 8px 16px 8px;
-	overflow: auto;
 }
 #admin_form_wrapper div.windowbg, #support_credits div.windowbg,
 #generate_reports_type div.windowbg, #new_group div.windowbg,
 #view_group div.windowbg, #admin_newsletters .windowbg {
-	background: none;
-	padding: 0;
 	margin: 0 4px;
+	padding: 0;
+
+	background: none;
 }
 #mailqueue_stats {
 	padding: 8px 8px 0 8px;
 }
 #mailqueue_stats .windowbg {
-	background: none;
 	padding: 0;
+
+	background: none;
 }
 #mailqueue_stats .windowbg .content {
 	padding: 12px 9px 0 9px;
@@ -99,8 +102,10 @@ td.newspreview {
 }
 #news_lists .newspreview div {
 	overflow: auto;
+
 	width: 100%;
 	height: 6em;
+
 	resize: vertical;
 }
 
@@ -109,10 +114,10 @@ td.newspreview {
 	padding: 4px 2px;
 }
 h3.category_header form {
-	font-size: .786em;
+	font-size: 0.786em;
 }
 /* Chrome trick to avoid multiple lines of feature names */
-.category_header>h3 {
+.category_header > h3 {
 	white-space: nowrap;
 }
 .windowbg.nopadding {
@@ -131,8 +136,9 @@ h3 a.help .icon {
 	padding: 0 4px 0 0;
 }
 .settings .help .icon {
-	margin: 0 0 0 -20px;
 	position: absolute;
+
+	margin: 0 0 0 -20px;
 }
 .table_caption, tr.table_caption td {
 	font-weight: bold;
@@ -157,6 +163,7 @@ fieldset dl {
 #quick_search .icon, #quick_search .input_text,
 #quick_search select, #quick_search .button_submit {
 	float: left;
+
 	margin: 3px 0 0 4px;
 }
 #quick_search .icon {
@@ -164,15 +171,18 @@ fieldset dl {
 }
 /* @todo - The welcome thingy. */
 #admincenter .roundframe, #modcenter .roundframe {
-	background: none;
-	border: none;
-	box-shadow: none;
+	overflow: visible;
+
 	margin: 0;
 	padding: 0;
-	overflow: visible;
+
+	border: none;
+	background: none;
+	box-shadow: none;
 }
 #welcome {
 	font-size: 0.929em;
+
 	padding: 12px 9px 8px 9px;
 }
 #welcome a {
@@ -185,14 +195,17 @@ fieldset dl {
 	margin: 0 -6px;
 }
 .search_results li {
+	line-height: 1.7em;
+
+	overflow: auto;
+
 	margin: 0;
 	padding: 5px 0;
-	overflow: auto;
-	line-height: 1.7em;
 }
 .search_results li p {
-	padding: 0 20px;
 	line-height: 1.7em;
+
+	padding: 0 20px;
 }
 #installedVersion, #latestVersion {
 	white-space: nowrap;
@@ -201,8 +214,8 @@ fieldset dl {
 	width: 50%;
 }
 .versionFilePad {
-	padding-left: 3ex;
 	width: 50%;
+	padding-left: 3ex;
 }
 .versionNumber {
 	width: 25%;
@@ -218,24 +231,28 @@ fieldset dl {
 	padding: 8px 12px 4px 12px;
 }
 #live_news, #supportVersionsTable {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 	width: 70%;
-	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 #supportVersionsTable {
 	width: 30%;
 	padding-left: 6px;
 }
 #admin_main_section .windowbg {
-	padding: 6px 0;
-	height: 12em;
 	overflow: auto;
+
+	height: 12em;
+	padding: 6px 0;
 }
 #admin_search_box {
 	padding: 0.5em 0;
 }
 #live_news div.content, #supportVersionsTable div.content {
-	padding: 0 4px;
 	font-size: 0.929em;
+
+	padding: 0 4px;
 }
 #supportVersionsTable div.content {
 	padding: 0 8px;
@@ -248,6 +265,7 @@ fieldset dl {
 }
 #ourAnnouncements dt a {
 	font-weight: bold;
+
 	display: block;
 }
 #ourAnnouncements dd {
@@ -270,27 +288,32 @@ fieldset dl {
 /* Scrollbars here look worse, take up space, and don't really add anything useful in this context. */
 div.quick_tasks {
 	margin: -8px 0 0 0;
+	padding: 0 0 16px 0;
+
 	border-radius: 0;
 	box-shadow: none;
-	padding: 0 0 16px 0;
 }
 #quick_tasks li {
-	list-style: none;
-	padding: 10px 6px 10px 6px;
 	float: left;
+	overflow: auto;
+
 	width: 50%;
 	height: 8em;
-	overflow: auto;
+	padding: 10px 6px 10px 6px;
+
+	list-style: none;
 }
 #quick_tasks li a {
 	line-height: 1.6em;
 }
 .home_image {
 	float: left;
+
 	margin: 2px 10px;
 }
 #quick_tasks li span {
 	display: block;
+
 	margin: 0 0 0 70px;
 }
 
@@ -302,6 +325,7 @@ div.quick_tasks {
 -----------------------------------------------------------------*/
 #support_credits {
 	position: relative;
+
 	padding: 6px 12px 12px 12px;
 }
 #support_resources {
@@ -309,19 +333,21 @@ div.quick_tasks {
 }
 #credits_logo {
 	position: absolute;
-	right: 16px;
 	top: 10px;
+	right: 16px;
+
 	width: 75px;
 }
 #support_credits .content {
-	padding: 0 18px;
 	line-height: 1.6em;
+
+	padding: 0 18px;
 }
 #support_credits .content p {
 	margin: 12px 0 0 0;
 	padding: 0;
 }
-#latestSupport{
+#latestSupport {
 	padding: 0 25px 15px 25px;
 }
 #credits_sections {
@@ -332,7 +358,9 @@ div.quick_tasks {
 }
 #support_credits dt {
 	float: left;
+
 	padding: 6px 0.8em 0 0;
+
 	text-indent: -4px;
 }
 #support_credits dd {
@@ -346,15 +374,17 @@ div.quick_tasks {
 	padding: 20px 0;
 }
 #core_features hr {
-	padding: 0;
 	margin: 4px 0 12px 0;
+	padding: 0;
 }
 #core_features .content {
-	padding: 0 12px;
 	overflow: auto;
+
+	padding: 0 12px;
 }
 .core_features_status_box {
 	margin-left: 5px;
+
 	vertical-align: middle;
 }
 /* Keep your enemies close, and your submit buttons if your screen is huge. */
@@ -362,25 +392,29 @@ div.quick_tasks {
 /* Still works without it if you reload the page, but rather odd that it's hiding. */
 .features_image {
 	float: left;
+
 	margin: 0 12px 0 0;
 }
 .features_switch {
 	float: right;
 }
 .features h3 {
-	padding: 0;
-	margin: 0 6px 0 105px;
 	font-size: 1.071em;
+
 	overflow: hidden;
-	white-space: pre;
-	text-overflow: ellipsis;
+
 	min-height: 1.6em;
 	max-height: 1.6em;
+	margin: 0 6px 0 105px;
+	padding: 0;
+
+	white-space: pre;
+	text-overflow: ellipsis;
 }
 .features p {
+	min-height: 56px;
 	margin: 0 105px;
 	padding: 0;
-	min-height: 56px;
 }
 #private {
 	width: 100%;
@@ -390,49 +424,60 @@ div.quick_tasks {
 /* Haven't got here yet. :P
 ------------------------------------------------- */
 #package_list ol, #package_list ol li {
-	list-style: decimal;
 	margin-left: 50px;
+
+	list-style: decimal;
+
 	border: none;
 }
 #package_list ol ul, #package_list ol ul li {
 	margin-left: 0;
+
 	list-style: none;
+
 	border-radius: 3px;
 }
 #package_list {
 	list-style-type: none;
 }
 #package_list li {
-	padding: 0.2em;
 	margin: 1px;
+	padding: 0.2em;
 }
 .package_id {
+	font-weight: bold;
+
+	display: inline-block;
+
 	width: 35%;
 	min-width: 20em;
-	display: inline-block;
-	font-weight: bold;
 }
 .description, .information {
-	max-height: 16em;
 	overflow: auto;
-	padding-bottom: .5em;
+
+	max-height: 16em;
+	padding-bottom: 0.5em;
 }
 .packages {
-	border: none !important;
 	list-style: none;
+
+	border: none !important;
 }
 #find_code, #replace_code {
-	display: block;
 	font-family: "dejavu sans mono", "monaco", "lucida console", "courier new", monospace;
 	font-size: 0.929em;
-	margin: 1px 0 6px 0;
-	padding: 3px 12px;
+
+	display: block;
 	overflow: auto;
-	white-space: nowrap;
 	/* Show a scrollbar after about 6 lines. */
 	/* This is much better than the old max-height css. */
+
 	height: 10em;
+	margin: 1px 0 6px 0;
+	padding: 3px 12px;
+
 	resize: vertical;
+	white-space: nowrap;
 }
 .package_server {
 	padding: 0 3em;
@@ -451,6 +496,7 @@ ul.package_servers li {
 }
 .file_content {
 	overflow: auto;
+
 	width: 100%;
 	padding-bottom: 1em;
 }
@@ -462,39 +508,45 @@ ul.package_servers li {
 ------------------------------------------------- */
 .strings_edit li {
 	display: inline-block;
+
 	width: 49%;
-	vertical-align:top;
+
+	vertical-align: top;
 }
 .strings_edit textarea {
-	width: 96%;
 	display: block;
+
+	width: 96%;
 }
 
 /* Styles for the file permissions section.
 ------------------------------------------------- */
 .filepermissions {
 	font-size: 0.786em;
+
 	white-space: nowrap;
 }
 .fperm {
 	display: block;
+
 	width: 35%;
+
 	text-align: center;
 }
 .perm_read {
-	background-color: #d1f7bf;
+	background-color: #D1F7BF;
 }
 .perm_write {
-	background-color: #ffbbbb;
+	background-color: #FFBBBB;
 }
 .perm_execute {
-	background-color: #fdd7af;
+	background-color: #FDD7AF;
 }
 .perm_custom {
-	background-color: #c2c6c0;
+	background-color: #C2C6C0;
 }
 .perm_nochange {
-	background-color: #eee;
+	background-color: #EEEEEE;
 }
 
 /* Styles for anti-spam questions.
@@ -505,7 +557,7 @@ dl.settings dt.questions {
 dl.settings dd.questions {
 	width: 35%;
 }
-dl.settings dt.questions input{
+dl.settings dt.questions input {
 	width: 80%;
 }
 dl.settings dd.questions input {
@@ -525,9 +577,10 @@ dl.settings dd.questions input {
 	padding: 0;
 }
 #manage_boards .content, #manage_attachments .content {
+	overflow: auto;
+
 	margin: -6px 0 12px 0;
 	padding: 6px 8px 16px 8px;
-	overflow: auto;
 }
 #manage_attachments .content {
 	margin: -10px 0 0;
@@ -541,36 +594,44 @@ dl.settings dd.questions input {
 }
 #manage_boards ul:nth-child(n+2) {
 	min-height: 12px;
-	padding-left: 30px;
 	margin: 0 0 -12px;
+	padding-left: 30px;
 }
 .ui-state-highlight {
 	height: 25px;
+
 	cursor: move;
 }
 #manage_boards li, #manage_boards li.windowbg, #manage_boards li.windowbg2 {
-	list-style: none;
 	margin: 0;
 	padding-top: 12px;
+
+	list-style: none;
 }
 #manage_boards li img {
-	vertical-align: middle;
 	padding: 0 6px 3px 6px;
+
+	vertical-align: middle;
 }
 #manage_boards li .floatleft {
-	font-weight: bold;
-	padding: 0 6px;
 	font-size: 1.071em;
-	cursor: move;
+	font-weight: bold;
+
 	width: 60%;
+	padding: 0 6px;
+
+	cursor: move;
 }
 #manage_boards li .floatleft:before {
 	font-family: "Segoe UI Symbol", "DejaVu Sans", "GNU Unifont";
-	content: "\21f3";
-	padding-right: 5px;
 	font-size: 1.286em;
+
 	float: left;
+
 	margin-top: -1px;
+	padding-right: 5px;
+
+	content: "\21f3";
 }
 .move_links {
 	padding: 0 13px 0 0;
@@ -579,9 +640,11 @@ dl.settings dd.questions input {
 	padding: 0 0.5em;
 }
 #manage_boards span.modify_boards a {
-	border-radius: 0;
-	padding: 3px 6px;
 	font-size: 1em;
+
+	padding: 3px 6px;
+
+	border-radius: 0;
 }
 #manage_boards span.modify_boards a:hover {
 	text-decoration: none;
@@ -602,8 +665,9 @@ dl.settings dd.questions input {
 .visible_boards .board label,
 .select_all_box label,
 .select_category label {
-	width: 30%;
 	display: inline-block;
+
+	width: 30%;
 }
 .visible_boards .select_all_box .floatright,
 .visible_boards .select_category .floatright,
@@ -613,6 +677,7 @@ dl.settings dd.questions input {
 .visible_boards .category:after, .visible_boards .board:after {
 	display: block;
 	clear: both;
+
 	content: "";
 }
 .visible_boards li {
@@ -629,6 +694,7 @@ dl.settings dd.questions input {
 ------------------------------------------------- */
 .msearch_details {
 	display: block;
+
 	width: 49%;
 }
 .right dt {
@@ -638,10 +704,10 @@ dl.settings dd.questions input {
 /* Styles for the manage maintenance section.
 ------------------------------------------------- */
 #manage_maintenance div.windowbg, #manage_maintenance div.windowbg2 {
-	padding: 0;
 	margin: 0 0 4px 0;
+	padding: 0;
 }
-#manage_maintenance .button_submit{
+#manage_maintenance .button_submit {
 	margin: 4px 10px 10px 10px;
 }
 #membersText, #rotText {
@@ -652,8 +718,10 @@ dl.settings dd.questions input {
 ------------------------------------------------- */
 .bbfilter {
 	display: table-cell;
-	padding: 4px 0;
+
 	width: 20px;
+	padding: 4px 0;
+
 	vertical-align: top;
 }
 .bbrequest_uri {
@@ -686,8 +754,9 @@ dl.settings dd.small_caption {
 	width: 100%;
 }
 #permissionForm .table_grid img.icon {
-	vertical-align: top;
 	width: 16px;
+
+	vertical-align: top;
 }
 dl.admin_permissions dt {
 	width: 35%;
@@ -700,10 +769,12 @@ dl.admin_permissions dd {
 ------------------------------------------------- */
 .file_permissions .table_grid {
 	table-layout: fixed;
+
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
+	   -moz-hyphens: auto;
+
+	    -ms-hyphens: auto;
 }
 
 /* Styles for the manage search section.
@@ -717,13 +788,15 @@ dl.settings dd.large_caption {
 .search_weight {
 	width: 40px;
 	padding: 0 0.5em;
+
 	text-align: right;
 }
 .search_settings {
 	float: left;
+	overflow: auto;
+
 	width: 49%;
 	margin: 0 0.5% 1em 0.5%;
-	overflow: auto;
 }
 
 /* Styles for the manage bans section.
@@ -735,10 +808,10 @@ dl.settings dd.large_caption {
 	width: 46%;
 }
 .ban_text {
-	min-height: 64px;
-	max-height: 64px;
 	min-width: 50%;
 	max-width: 99%;
+	min-height: 64px;
+	max-height: 64px;
 }
 #manage_bans dl {
 	margin-bottom: 1em;
@@ -753,50 +826,56 @@ dl.settings dd.large_caption {
 	width: 97%;
 }
 .pending_payments {
+	line-height: 2em;
+
 	margin: 0;
 	padding: 0;
-	line-height: 2em;
 }
 
 /* Styles for the manage permissions section.
 ------------------------------------------------- */
 .perm_name, .perm_profile, .perm_board {
 	display: block;
+
 	width: 40%;
 }
 .perm_boards {
-	padding: 0;
 	margin: 0 0 0.6em 0;
+	padding: 0;
 }
 .perm_boards li {
-	padding: 0.3em 0.5em;
 	margin: 1px;
+	padding: 0.3em 0.5em;
 }
 .perm_classic {
-	margin: 0.2em;
 	width: 49%;
+	margin: 0.2em;
 }
 .permission_groups {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 #manage_boards .permission_groups li {
-	list-style-type: none;
 	padding-top: 1px;
+
+	list-style-type: none;
 }
 #manage_boards ul.permission_groups {
 	margin-bottom: 0;
 }
 .perms {
-	width: 20px;
 	display: inline-block;
+
+	width: 20px;
+
 	text-align: center;
 }
 .edit_board {
+	margin-left: 3px;
 	padding: 0 8px 8px;
+
 	background-image: url(../images/icons/modify_small.png);
 	background-repeat: no-repeat;
-	margin-left: 3px;
 }
 .edit_board.nochanges {
 	background-image: url(../images/icons/field_valid.png);
@@ -805,27 +884,31 @@ dl.settings dd.large_caption {
 	background-image: url(../images/icons/field_invalid.png);
 }
 .perm_profile_delete {
-	width:5%;
+	width: 5%;
 }
 
 /* Styles for the themes section.
 ------------------------------------------------- */
 ul.theme_options {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 ul.theme_options li {
-	list-style: none;
 	padding: 0.4em;
+
+	list-style: none;
 }
 .is_directory {
 	padding-left: 18px;
+
 	background: url(../images/admin/boards.png) no-repeat;
 }
 .edit_file {
-	width: 100%;
 	font-family: monospace;
+
+	width: 100%;
 	margin-top: 1ex;
+
 	white-space: pre;
 }
 
@@ -837,17 +920,18 @@ dl.themes_list dt {
 }
 dl.themes_list dd {
 	font-style: italic;
+
 	white-space: nowrap;
 }
 .theme_options dt {
 	width: 55%;
 }
 .theme_options dd {
-	width: 40%
+	width: 40%;
 }
 .theme_settings .input_text {
-	max-width: 100%;
 	width: 30em;
+	max-width: 100%;
 }
 
 /* Styles for the registration center.
@@ -857,58 +941,68 @@ dl.themes_list dd {
 }
 #agreement, #reserved {
 	width: 99%;
-	padding: 0 .25em;
+	padding: 0 0.25em;
 }
 
 /* Styles for the moderation center.
 ------------------------------------------------- */
 #modcenter {
 	display: block;
+
 	width: 100%;
 }
 #modcenter .windowbg, #modcenter .windowbg2, #modcenter .generic_list_wrapper {
 	overflow: visible;
+
 	margin: 4px 0 0 0;
 }
 #modcenter .content {
 	padding: 12px;
 }
 #mod_main_section .windowbg {
-	padding: 6px 0;
-	height: 14em;
 	overflow: auto;
+
+	height: 14em;
+	padding: 6px 0;
 }
 .modblock_left {
-	width: 49%;
 	float: left;
 	clear: right;
+
+	width: 49%;
 	margin: 0 0 1em 0;
 }
 .modblock_right {
-	width: 49%;
 	float: right;
+
+	width: 49%;
 	margin: 0 0 1em 0;
 }
 .modblock_left #ourAnnouncements {
-	height: 15em;
 	overflow: visible;
+
+	height: 15em;
 }
 .modbox img.icon {
 	margin: 3px 5px 0 0;
+
 	vertical-align: text-top;
 }
 
 /* Moderation Notes */
 ul.moderation_notes {
+	overflow: auto;
+
+	height: auto;
 	margin: 0;
 	padding: 0;
+
 	list-style: none;
-	overflow: auto;
-	height: auto;
 }
 ul.moderation_notes li {
 	padding: 0.2em;
-	border-bottom: 1px solid #ccc;
+
+	border-bottom: 1px solid #CCCCCC;
 }
 .notes {
 	margin-top: 0.4em;
@@ -927,45 +1021,59 @@ ul.moderation_notes li {
 	width: 100%;
 }
 #error_log tr.windowbg td, #error_log tr.windowbg2 td {
-	padding: 8px;
 	line-height: 160%;
+
+	padding: 8px;
 }
 #error_log td div {
-	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 	/* The next bits should fix https://github.com/elkarte/Elkarte/issues/567 */
+
 	word-wrap: break-word;
 	word-break: break-all;
 	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
+	   -moz-hyphens: auto;
+
+	    -ms-hyphens: auto;
 }
 #error_log .error_who, #error_log .error_type {
-	float: left;
-	width: 50%;
 	line-height: 1.8em;
+
+	float: left;
+
+	width: 50%;
 	padding: 0 4px 4px 4px;
+
 	vertical-align: bottom;
 }
 #error_log .error_where {
+	line-height: 1.6em;
+
 	float: left;
+
 	width: 100%;
 	padding: 4px 0;
-	line-height: 1.6em;
 }
 .error_where .scope {
 	display: table-cell;
-	padding: 4px;
+
 	width: 20px;
+	padding: 4px;
+
 	vertical-align: top;
 }
 #error_log .checkbox_column {
 	width: 15px;
-	vertical-align: top;
+
 	text-align: center;
+	vertical-align: top;
 }
 #error_log a img {
-	vertical-align: middle;
 	margin: 0 8px 0 0;
+
+	vertical-align: middle;
 }
 
 /* Styles for the Report generation
@@ -981,7 +1089,7 @@ ul.moderation_notes li {
 
 /* Admin menu icons as sprites
 ------------------------------------------------- */
-.linklevel2>img {
+.linklevel2 > img {
 	background-image: url(../images/admin/admin_sprite.png);
 	background-repeat: no-repeat;
 }
@@ -1074,6 +1182,7 @@ ul.moderation_notes li {
 }
 .sortable_smiley li {
 	display: inline;
+
 	padding: 0 6px;
 }
 .ui-sortable li > a {
@@ -1115,8 +1224,9 @@ ul.moderation_notes li {
 		display: block;
 	}
 	.visible_boards label {
-		width: auto!important;
 		display: inline;
+
+		width: auto!important;
 	}
 	#wrapper, #footer_section .frame {
 		min-width: 100%;
@@ -1145,6 +1255,7 @@ ul.moderation_notes li {
 	}
 	#quick_tasks ul li span {
 		display: block;
+
 		margin: 0 0 0 50px;
 	}
 	#credits_page {
@@ -1163,11 +1274,12 @@ ul.moderation_notes li {
 		padding: 0 0 10px 0;
 	}
 	#core_features .features p {
-		margin: 0;
-		padding: 0;
+		overflow: auto;
+
 		min-height: 0;
 		max-height: 5em;
-		overflow: auto;
+		margin: 0;
+		padding: 0;
 	}
 	#manage_boards .windowbg {
 		line-height: 3.2em;
@@ -1193,58 +1305,72 @@ ul.moderation_notes li {
 }
 #sort_email_fp td:nth-child(2):before, #custom_profile_fields td:nth-child(2):before, #message_icon_list td:nth-child(1):before {
 	font-family: "Segoe UI Symbol", "DejaVu Sans", "GNU Unifont";
-	content: "\21f3";
-	padding-right: 5px;
 	font-size: 1.786em;
+
+	padding-right: 5px;
+
+	content: "\21f3";
 }
 #custom_profile_fields td:nth-child(2):before {
 	float: left;
+
 	margin-top: 0.3em;
 }
 
 /* jQuery Dialog Box */
 .ui-helper-clearfix:before, .ui-helper-clearfix:after {
-	border-collapse: collapse;
-	content: "";
 	display: table;
+
+	border-collapse: collapse;
+
+	content: "";
 }
 .ui-helper-clearfix:after {
 	clear: both;
 }
 .ui-helper-clearfix:before, .ui-helper-clearfix:after {
-	border-collapse: collapse;
-	content: "";
 	display: table;
+
+	border-collapse: collapse;
+
+	content: "";
 }
 
 /* jQuery Dialog */
 .ui-dialog {
-	padding: 0;
 	z-index: 100;
+
+	padding: 0;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
-	margin: 0.5em 0;
 	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+
 	width: 90%;
+	margin: 0.5em 0;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .ui-dialog .ui-dialog-titlebar {
-	padding: 0 1em;
-	font-weight: bold;
 	font-size: 1.071em;
+	font-weight: bold;
+
+	padding: 0 1em;
 }
 .ui-dialog .ui-dialog-content {
 	padding: 4px;
 }
 .ui-dialog .ui-dialog-titlebar-close {
-	cursor: pointer;
-	border: 0;
 	float: right;
+
 	width: 16px;
 	height: 16px;
 	margin: 0.7em 0;
+
+	cursor: pointer;
+
+	border: 0;
 	background: url(../images/buttons/delete.png) no-repeat scroll left center transparent;
 }
 .ui-dialog .ui-dialog-titlebar-close .ui-button-text {
@@ -1254,6 +1380,7 @@ ul.moderation_notes li {
 	z-index: 100;
 	top: 0;
 	left: 0;
+
 	width: 100%;
 	height: 100%;
 }

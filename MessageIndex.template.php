@@ -5,13 +5,11 @@
  * @copyright ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
- * This software is a derived product, based on:
- *
- * Simple Machines Forum (SMF)
+ * This file contains code covered by:
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.0.7
+ * @version 1.1.4
  *
  */
 
@@ -94,7 +92,7 @@ function template_topic_listing_above()
 	if (!empty($context['can_quick_mod']) && $options['display_quick_mod'] == 1)
 		echo '
 						<li class="listlevel1 quickmod_select_all">
-							<input type="checkbox" onclick="invertAll(this, document.getElementById(\'quickModForm\'), \'topics[]\');" class="input_check" />
+							<input type="checkbox" onclick="invertAll(this, document.getElementById(\'quickModForm\'), \'topics[]\');" />
 						</li>';
 
 	$current_header = $context['topics_headers'][$context['sort_by']];
@@ -182,10 +180,19 @@ function template_topic_listing()
 
 			// Showing avatars on the index
 			if (!empty($settings['avatars_on_indexes']))
+			{
+				// A bug in ElkArte < 1.1.7
+				if (empty($topic['last_post']['member']['avatar']['href']))
+				{
+					$topic['last_post']['member']['avatar']['href'] = $settings['images_url'] . '/default_avatar.png';
+				}
 				echo '
 					<div class="board_avatar', ($topic['is_posted_in'] ? ' fred' : ''), '">
-						<a href="', $topic['last_post']['member']['href'], '"><img class="avatar" src="', $topic['last_post']['member']['avatar']['href'], '" alt="" /></a>
+						<a href="', $topic['last_post']['member']['href'], '">
+							<img class="avatar" src="', $topic['last_post']['member']['avatar']['href'], '" alt="" />
+						</a>
 					</div>';
+			}
 
 			// On to the topic details,
 			echo '
@@ -208,7 +215,7 @@ function template_topic_listing()
 			// Show the topic icon, use the sprite if we can
 			if (isset($message_icon_sprite[$topic['first_post']['icon']]))
 				echo '
-								<span class="topicicon img_', $topic['first_post']['icon'], '"></span>';
+								<span class="topicicon i-', $topic['first_post']['icon'], '"></span>';
 			else
 				echo '
 								<img src="', $topic['first_post']['icon_url'], '" alt="" />';
@@ -239,10 +246,9 @@ function template_topic_listing()
 
 			echo '
 						', $topic['last_post']['html_time'], '<br />
-						', $txt['by'], ' ', $topic['last_post']['member']['link'], '<br />', 
-						(!empty($topic['pages']) ? '
-						<ul class="small_pagelinks" id="pages' . $topic['first_post']['id'] . '" role="menubar">' . $topic['pages'] . '</ul>' : ''), '
-						<a class="topicicon img_last_post', '" href="', $topic['last_post']['href'], '" title="', $txt['last_post'], '"></a>
+						', $txt['by'], ' ', $topic['last_post']['member']['link'], '<br />',
+						(!empty($topic['pages']) ? '<ul class="small_pagelinks" id="pages' . $topic['first_post']['id'] . '" role="menubar">' . $topic['pages'] . '</ul>' : ''), '
+						<a class="topicicon i-last_post', '" href="', $topic['last_post']['href'], '" title="', $txt['last_post'], '"></a>
 					</p>
 				</div>';
 
@@ -295,7 +301,7 @@ function template_topic_listing()
 			foreach ($context['qmod_actions'] as $qmod_action)
 				if ($context['can_' . $qmod_action])
 					echo '
-					<option value="' . $qmod_action . '">' . (isBrowser('ie8') ? '&#187;' : '&#10148;') . '&nbsp;', $txt['quick_mod_' . $qmod_action] . '</option>';
+					<option value="' . $qmod_action . '">&#10148;&nbsp;', $txt['quick_mod_' . $qmod_action] . '</option>';
 
 			echo '
 				</select>';
@@ -306,7 +312,7 @@ function template_topic_listing()
 				<span id="quick_mod_jump_to">&nbsp;</span>';
 
 			echo '
-				<input type="submit" value="', $txt['quick_mod_go'], '" onclick="return document.forms.quickModForm.qaction.value != \'\' &amp;&amp; confirm(\'', $txt['quickmod_confirm'], '\');" class="button_submit" />
+				<input type="submit" value="', $txt['quick_mod_go'], '" onclick="return document.forms.quickModForm.qaction.value != \'\' &amp;&amp; confirm(\'', $txt['quickmod_confirm'], '\');" />
 			</div>';
 		}
 
@@ -341,7 +347,7 @@ function template_topic_listing_below()
 		template_basicicons_legend();
 
 	echo '
-			<script><!-- // --><![CDATA[';
+			<script>';
 
 	if (!empty($context['using_relative_time']))
 		echo '
@@ -357,7 +363,7 @@ function template_topic_listing_below()
 					iCurBoardChildLevel: ', $context['jump_to']['child_level'], ',
 					sCurBoardName: "', $context['jump_to']['board_name'], '",
 					sBoardChildLevelIndicator: "&#8195;",
-					sBoardPrefix: "', isBrowser('ie8') ? '&#187; ' : '&#10148; ', '",
+					sBoardPrefix: "&#10148;",
 					sCatClass: "jump_to_header",
 					sCatPrefix: "",
 					bNoRedirect: true,
@@ -373,20 +379,20 @@ function template_topic_listing_below()
 					iCurBoardChildLevel: ', $context['jump_to']['child_level'], ',
 					sCurBoardName: "', $context['jump_to']['board_name'], '",
 					sBoardChildLevelIndicator: "&#8195;",
-					sBoardPrefix: "', isBrowser('ie8') ? '&#187; ' : '&#10148; ', '",
+					sBoardPrefix: "&#10148;",
 					sCatPrefix: "",
 					sCatClass: "jump_to_header",
 					sGoButtonLabel: "', $txt['quick_mod_go'], '"
 				});
-			// ]]></script>
+			</script>
 	</div>';
 
 	// Javascript for inline editing.
 	echo '
-	<script><!-- // --><![CDATA[
+	<script>
 		var oQuickModifyTopic = new QuickModifyTopic({
 			aHidePrefixes: Array("lockicon", "stickyicon", "pages", "newicon"),
 			bMouseOnDiv: false,
 		});
-	// ]]></script>';
+	</script>';
 }

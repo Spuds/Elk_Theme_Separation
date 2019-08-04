@@ -1,20 +1,21 @@
-/**
+/*!
  * @name      ElkArte Forum
  * @copyright ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
- * This software is a derived product, based on:
+ * This file contains code covered by:
  *
- * Simple Machines Forum (SMF)
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:		BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.0 Release Candidate 2
- *
+ * @version 1.1
+ */
+
+/**
  * This file contains javascript associated with the current theme
  */
 
-$(document).ready(function() {
+$(function() {
 	// Menu drop downs
 	if (use_click_menu)
 		$('#main_menu, ul.admin_menu, ul.sidebar_menu, ul.poster, ul.quickbuttons, #sort_by').superclick({speed: 150, animation: {opacity:'show', height:'toggle'}, speedOut: 0, activeClass: 'sfhover'});
@@ -22,17 +23,19 @@ $(document).ready(function() {
 		$('#main_menu, ul.admin_menu, ul.sidebar_menu, ul.poster, ul.quickbuttons, #sort_by').superfish({delay : 300, speed: 175, hoverClass: 'sfhover'});
 
 	// Expand Panel
-	$("#open").click(function(){
+	$("#open").on('click', function(e) {
+		e.preventDefault();
 		$("#panel").slideDown("slow");
 	});
 
 	// Collapse Panel
-	$("#close").click(function(){
+	$("#close").on('click', function(e) {
+		e.preventDefault();
 		$("#panel").slideUp("slow");
 	});
 
 	// Switch buttons from "Log In | Register" to "Close Panel" on click
-	$("#toggle a").click(function () {
+	$("#toggle a").on('click', function () {
 		$("#toggle a").toggle();
 	});
 
@@ -41,7 +44,8 @@ $(document).ready(function() {
 		$('#search_form').elk_QuickSearch();
 
 	// Tooltips
-	$('.preview').SiteTooltip({hoverIntent: {sensitivity: 10, interval: 750, timeout: 50}});
+	if ((!is_mobile && !is_touch) || use_click_menu)
+		$('.preview').SiteTooltip({hoverIntent: {sensitivity: 10, interval: 750, timeout: 50}});
 
 	// Find all nested linked images and turn off the border
 	$('a.bbc_link img.bbc_img').parent().css('border', '0');
@@ -58,14 +62,22 @@ $(document).ready(function() {
 		$(this).siblings().slideToggle("fast");
 		$(this).parent().toggleClass("collapsed");
 	});
-	$(document).on('ready', 'legend', function () {
+
+	$('legend', function () {
 		if ($(this).data('collapsed'))
 			$(this).click();
 	});
 
 	// Spoiler
-	$('.spoilerheader').click(function() {
+	$('.spoilerheader').on('click', function() {
 		$(this).next().children().slideToggle("fast");
+	});
+
+	// Attachment thumbnail expand on click, you can turn off this namespaced click
+	// event with $('[data-lightboximage]').off('click.elk_lb');
+	$('[data-lightboximage]').on('click.elk_lb', function(e) {
+		e.preventDefault();
+		expandThumbLB($(this).data('lightboximage'), $(this).data('lightboxmessage'));
 	});
 
 	// BBC [img] element toggle for height and width styles of an image.
@@ -78,25 +90,25 @@ $(document).ready(function() {
 
 		// Note to addon authors, if you want to enable your own click events to bbc images
 		// you can turn off this namespaced click event with $("img").off("click.elk_bbc")
-		$(this).on( "click.elk_bbc", function() {
+		$(this).on( 'click.elk_bbc', function() {
 			var $this = $(this);
 
 			// No saved data, then lets set it to auto
-			if ($.isEmptyObject($this.data()))
+			if ($.isEmptyObject($this.data('bbc_img')))
 			{
-				$this.data("bbc_img", {
+				$this.data('bbc_img', {
 						width: $this.css('width'),
 						height: $this.css('height'),
 						'max-width': $this.css('max-width'),
-						'max-height': $this.css('max-height'),
+					'max-height': $this.css('max-height')
 				});
 				$this.css({'width': $this.css('width') === 'auto' ? null : 'auto'});
 				$this.css({'height': $this.css('height') === 'auto' ? null : 'auto'});
 
-				// Overide default css to allow the image to expand fully, add a div to exand in
-				$this.css({'max-width': 'none'});
+				// Override default css to allow the image to expand fully, add a div to expand in
 				$this.css({'max-height': 'none'});
-				$this.wrap('<div style="overflow: auto"></div>');
+				$this.css({'max-width': '100%'});
+				$this.wrap('<div style="overflow:auto;display:inline-block;"></div>');
 			}
 			else
 			{
@@ -107,7 +119,7 @@ $(document).ready(function() {
 				$this.css({'max-height': $this.data("bbc_img")['max-height']});
 
 				// Remove the data
-				$this.removeData();
+				$this.removeData('bbc_img');
 
 				// Remove the div we added to allow the image to overflow expand in
 				$this.unwrap();
@@ -116,7 +128,8 @@ $(document).ready(function() {
 			}
 		});
 	});
-	$('.hamburger_30').click(function(e) {
+
+	$('.hamburger_30').on('click', function(e) {
 		e.preventDefault();
 		var id = $(this).data('id');
 		$('#' + id).addClass('visible');
@@ -127,7 +140,7 @@ $(document).ready(function() {
 /**
  * Keep the login/register button positioned on the wrapper
  */
-$(window).resize(function() {
+$(window).on('resize', function() {
 var head_pos = $('#wrapper').offset().left,
 	x = head_pos + 60;
 
