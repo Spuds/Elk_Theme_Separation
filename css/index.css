@@ -3019,9 +3019,10 @@ img.new_posts {
 
 	width: 1.3em;
 	height: 1.15em;
+	padding: 0 4px;
 
 	content: "";
-	vertical-align: top;
+	vertical-align: text-top;
 }
 
 /* Message index adjustments to standard svg icons */
