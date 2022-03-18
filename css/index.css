@@ -1079,6 +1079,8 @@ a.bbc_link {
 #quick_edit_body_container .editor {
 	width: 100%;
 	margin-bottom: 10px;
+	padding: 2px;
+	box-sizing: border-box
 }
 
 #quick_edit_body_container .input_text {
@@ -1215,6 +1217,16 @@ a.bbc_link {
 
 #menu_nav_1 {
 	border-radius: 0 0 6px 6px;
+}
+
+.menu_nav_scroll {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 95%;
 }
 
 /* The main title. */
@@ -3961,6 +3973,8 @@ dl.send_mail dd {
 
 #postmodify #message {
 	width: 100%;
+	padding: 2px;
+	box-sizing: border-box;
 }
 
 #postmodify .lastedit {
@@ -5685,8 +5699,8 @@ a.help .icon {
 }
 
 .search_results_posts .topic_moderation {
-	width: 2em;
-	padding: 1.3em 1em 0 0;
+	width: 4em;
+	padding: 1em 1em 0 0;
 
 	vertical-align: top;
 }
@@ -6820,6 +6834,10 @@ a > i {
 		height: 48px;
 	}
 
+	.menu_nav_scroll {
+		width: 98%;
+	}
+
 	#main_menu .menulevel2 {
 		top: 48px;
 		height: 3.177em;;
@@ -6967,6 +6985,12 @@ a > i {
 		display: block;
 
 		margin: 1em auto;
+	}
+
+	.statusbar .insertoverlay .button {
+		left: 0;
+		top: -3em;
+		border-radius: 4px;
 	}
 }
 
@@ -7169,7 +7193,7 @@ a > i {
 		float: none;
 	}
 
-	#news, #logobox, .rightheader #logobox, #top_section_notice {
+	#news, .rightheader #logobox, #top_section_notice {
 		display: none;
 	}
 

@@ -9,7 +9,7 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.1.4
+ * @version 1.1.7
  *
  */
 
@@ -71,19 +71,20 @@ function template_build_poster_div($message, $ignoring = false)
 										(empty($modSettings['karmaDisableSmite']) ? '<a class="linklevel2" href="' . $message['member']['karma']['smite_url'] . '">' . $modSettings['karmaSmiteLabel'] . '</a>' : '') . '
 									</li>';
 
-		// Show the member's gender icon?
-		if (!empty($settings['show_gender']) && $message['member']['gender']['image'] != '' && !isset($context['disabled_fields']['gender']))
-			$poster_div .= '
-									<li class="listlevel2 gender">' . $txt['gender'] . ': ' . $message['member']['gender']['image'] . '</li>';
-
-		// Show their personal text?
-		if (!empty($settings['show_blurb']) && $message['member']['blurb'] != '')
-			$poster_div .= '
-									<li class="listlevel2 blurb">' . $message['member']['blurb'] . '</li>';
-
 		// Any custom fields to show as icons?
 		if (!empty($message['member']['custom_fields']))
 		{
+			// Show above-icon placement (replacing personal text and gender)
+			foreach ($message['member']['custom_fields'] as $custom)
+			{
+				if ($custom['placement'] == 3 && !empty($custom['value']))
+				{
+					$poster_div .= '
+									<li class="listlevel2 cf_aboveicons">' . $custom['value'] . '</li>';
+				}
+			}
+
+			// Icon placement.
 			$shown = false;
 			foreach ($message['member']['custom_fields'] as $custom)
 			{
@@ -119,7 +120,7 @@ function template_build_poster_div($message, $ignoring = false)
 			if ($message['member']['website']['url'] != '' && !isset($context['disabled_fields']['website']))
 				$poster_div .= '
 											<li class="cf_icon">
-												<a href="' . $message['member']['website']['url'] . '" title="' . $message['member']['website']['title'] . '" target="_blank" class="new_win">' . ($settings['use_image_buttons'] ? '<i class="icon i-website" title="' . $message['member']['website']['title'] . '"></i>' : $txt['www']) . '</a>
+												<a href="' . $message['member']['website']['url'] . '" title="' . $message['member']['website']['title'] . '" target="_blank" rel="noopener noreferrer" class="new_win">' . ($settings['use_image_buttons'] ? '<i class="icon i-website" title="' . $message['member']['website']['title'] . '"></i>' : $txt['www']) . '</a>
 											</li>';
 
 			// Don't show the email address if they want it hidden.

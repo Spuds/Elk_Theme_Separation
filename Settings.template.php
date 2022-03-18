@@ -234,23 +234,11 @@ function template_settings()
 			'label' => $txt['user_avatars'],
 		),
 		array(
-			'id' => 'show_blurb',
-			'label' => $txt['user_text'],
-		),
-		array(
-			'id' => 'show_gender',
-			'label' => $txt['gender_images'],
-		),
-		array(
 			'id' => 'hide_post_group',
 			'label' => $txt['hide_post_group'],
 			'description' => $txt['hide_post_group_desc'],
 		),
 	'',
-		array(
-			'id' => 'show_bbc',
-			'label' => $txt['admin_bbc'],
-		),
 		array(
 			'id' => 'additional_options_collapsible',
 			'label' => $txt['additional_options_collapsible'],
