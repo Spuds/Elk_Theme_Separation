@@ -4,11 +4,10 @@
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This file contains code covered by:
- *
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:		BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.1
+ * @version 1.1.9
  */
 
 /**
@@ -54,22 +53,25 @@ $(function() {
 	if (typeof elk_codefix === 'function')
 		elk_codefix();
 
+	// Remove "show more" from short quotes
+	if (typeof elk_quotefix === 'function')
+		elk_quotefix();
 	// Enable the ... page expansion
 	$('.expand_pages').expand_pages();
 
-	// Collapsabile fieldsets, pure candy
+	// Collapsible fieldsets, pure candy
 	$(document).on('click', 'legend', function(){
 		$(this).siblings().slideToggle("fast");
 		$(this).parent().toggleClass("collapsed");
 	});
 
-	$('legend', function () {
+	$('legend').each(function () {
 		if ($(this).data('collapsed'))
 			$(this).click();
 	});
 
 	// Spoiler
-	$('.spoilerheader').on('click', function() {
+	$('.spoilerheader').click(function() {
 		$(this).next().children().slideToggle("fast");
 	});
 
@@ -90,7 +92,7 @@ $(function() {
 
 		// Note to addon authors, if you want to enable your own click events to bbc images
 		// you can turn off this namespaced click event with $("img").off("click.elk_bbc")
-		$(this).on( 'click.elk_bbc', function() {
+		$(this).on( "click.elk_bbc", function() {
 			var $this = $(this);
 
 			// No saved data, then lets set it to auto
@@ -129,7 +131,7 @@ $(function() {
 		});
 	});
 
-	$('.hamburger_30').on('click', function(e) {
+	$('.hamburger_30').click(function(e) {
 		e.preventDefault();
 		var id = $(this).data('id');
 		$('#' + id).addClass('visible');
@@ -146,6 +148,55 @@ var head_pos = $('#wrapper').offset().left,
 
 	$("#toggle").css({right:x});
 });
+
+$(window).on('scroll', function(e){
+	let distanceY,
+		shrinkOn,
+		nav,
+		top;
+
+	e.preventDefault();
+
+	distanceY = window.pageYOffset || document.documentElement.scrollTop;
+	top = $('#upper_container');
+	nav = $('#menu_wrapper')//.find(':first');
+
+	let mq = window.matchMedia( "(min-width: 480px)" );
+	if (mq.matches) {
+		shrinkOn = 110;
+	} else {
+		shrinkOn = 110;
+	}
+
+	// Once the menu reaches the top of the window, set it to a fixed position
+	if (distanceY > shrinkOn) {
+		top.attr('display', 'none');
+		nav.attr('class', 'menu_nav_scroll');
+	} else {
+		top.attr('display', 'block');
+		nav.attr('class', 'wrapper');
+	}
+
+	// If there was a hash in the URL, we now navigate to it.
+	if (window.location.hash) {
+		adjust_linked(window.location.hash);
+	}
+});
+
+var named = true;
+function adjust_linked(target)
+{
+	let hash = $(target);
+
+	// Move to the hash, if we find it and we have not already done so
+	if (named && typeof hash !== 'undefined' && hash.offset() !== undefined) {
+		named = false;
+
+		$('html, body').animate({
+			scrollTop: hash.offset().top - 100
+		});
+	}
+}
 
 /**
  * Expand the quick search area when the search box is clicked.

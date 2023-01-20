@@ -9,7 +9,7 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.1.4
+ * @version 1.1.9
  *
  */
 
@@ -104,7 +104,7 @@ function template_init()
  * Simplify the use of callbacks in the templates.
  *
  * @param string $id - A prefix for the template functions the final name
- *                     template_{$id}_{$array[n]}
+ *                     should look like: template_{$id}_{$array[n]}
  * @param string[] $array - The array of function suffixes
  */
 function call_template_callbacks($id, $array)
@@ -118,8 +118,6 @@ function call_template_callbacks($id, $array)
 		if (function_exists($func))
 			$func();
 	}
-
-	echo '<div class="clear"></div>';
 }
 
 /**
@@ -147,11 +145,9 @@ function template_html_above()
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">';
 
 	echo '
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="description" content="', $context['page_title_html_safe'], '" />', !empty($context['meta_keywords']) ? '
-	<meta name="keywords" content="' . $context['meta_keywords'] . '" />' : '';
+	<meta name="description" content="', $context['page_title_html_safe'], '" />';
 
 	// OpenID enabled? Advertise the location of our endpoint using YADIS protocol.
 	if (!empty($modSettings['enableOpenID']))
@@ -163,8 +159,15 @@ function template_html_above()
 		echo '
 	<meta name="robots" content="noindex" />';
 
+	// If we have any Open Graph data, here is where is inserted.
+	if (!empty($context['open_graph']))
+	{
+		echo '
+	' .implode("\n\t", $context['open_graph']);
+	}
+
 	// load in any css from addons or themes so they can overwrite if wanted
-	theme()->template_css();
+	template_css();
 
 	// Present a canonical url for search engines to prevent duplicate content in their indices.
 	if (!empty($context['canonical_url']))
@@ -266,9 +269,7 @@ function template_body_above()
 	echo '
 	<a id="top" href="#skipnav">', $txt['skip_nav'], '</a>
 	<div id="menu_wrapper" class="wrapper">
-		<div id="menu_nav" role="navigation">
-			', template_menu(), '
-		</div>
+		', template_menu(), '
 		<div id="menu_nav_1"></div>
 	</div><div id="wrapper" class="wrapper">';
 
@@ -387,7 +388,7 @@ function template_th_search_bar()
 		echo '
 					<input type="hidden" name="', (!empty($modSettings['search_dropdown']) ? 'sd_topic' : 'topic'), '" value="', $context['current_topic'], '" />';
 	// If we're on a certain board, limit it to this board ;).
-	elseif (!empty($context['current_board']))
+	if (!empty($context['current_board']))
 		echo '
 					<input type="hidden" name="', (!empty($modSettings['search_dropdown']) ? 'sd_brd[' : 'brd['), $context['current_board'], ']"', ' value="', $context['current_board'], '" />';
 
@@ -468,6 +469,24 @@ function template_html_below()
 
 	// load in any javascript that could be deferred to the end of the page
 	theme()->template_javascript(true);
+
+	// Schema microdata about the organization?
+	if (!empty($context['smd_site']))
+	{
+		echo '
+	<script type="application/ld+json">
+	', json_encode($context['smd_site'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), '
+	</script>';
+	}
+
+	// Schema microdata about the post?
+	if (!empty($context['smd_article']))
+	{
+		echo '
+	<script type="application/ld+json">
+	', json_encode($context['smd_article'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), '
+	</script>';
+	}
 
 	// Anything special to put out?
 	if (!empty($context['insert_after_template']))
@@ -650,10 +669,6 @@ function template_button_strip($button_strip, $direction = '', $strip_options = 
 	if (!is_array($strip_options))
 		$strip_options = array();
 
-	// List the buttons in reverse order for RTL languages.
-	if ($context['right_to_left'])
-		$button_strip = array_reverse($button_strip, true);
-
 	// Create the buttons... now with cleaner markup (yay!).
 	$buttons = array();
 	foreach ($button_strip as $key => $value)
@@ -818,9 +833,6 @@ function template_show_error($error_id)
 					</div>';
 }
 
-/**
- *
- */
 function template_uc_generic_infobox()
 {
 	global $context;

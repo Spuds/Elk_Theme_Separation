@@ -40,15 +40,13 @@
  *		$PROGRESS............Nifty progress bars.
  *		$MEDIA...............Experimental media queries.
  */
-
 /* -------------------------------------------------------
  *	$GENERAL
  * -------------------------------------------------------
  */
-
 /* Normal, standard links. */
 a, a:link, a:visited,
-	/* Links that open in a new window. */
+/* Links that open in a new window. */
 a.new_win:link, a.new_win:visited {
 	color: #304B24;
 }
@@ -115,8 +113,8 @@ input[disabled].input_text, input[disabled].input_password {
 
 /* Common button styling. */
 input[type="submit"], .drop_area_fileselect_text, button[type="submit"], input[type="button"],
-	/* Anchors styled to look like buttons. */
-	/* These have standard body text size. Can be chained with smalltext class. */
+/* Anchors styled to look like buttons. */
+/* These have standard body text size. Can be chained with smalltext class. */
 .linkbutton:link, .linkbutton_right:link, .linkbutton_left:link,
 .linkbutton:visited, .linkbutton_right:visited, .linkbutton_left:visited {
 	color: #585858;
@@ -179,7 +177,6 @@ strong {
 /* Styles for main headers. */
 .category_header, .forum_category .category_header, .forumposts .category_header, .content_category .category_header {
 	font-weight: 600;
-
 	color: #1C4A77;
 	border-color: rgba(0, 0, 0, 0.3);
 	background: #313131 linear-gradient(to bottom, #4993C5 0%, #8CB5D9 50%, #8CB5D9 50%, #4993C5 100%);
@@ -302,7 +299,6 @@ strong {
  * $BBC
  * -------------------------------------------------------
  */
-
 /* The "Quote:" and "Code:" header parts... */
 .codeheader, .quoteheader {
 	color: #585858;
@@ -404,7 +400,6 @@ div.bbc_footnotes .meaction {
  *	$AJAX
  * -------------------------------------------------------
  */
-
 /* The "Loading" bar for quick edit, etc. */
 #ajax_in_progress, .ajax_infobar {
 	color: #3D6E32;
@@ -420,7 +415,6 @@ div.bbc_footnotes .meaction {
  *	$MAIN.
  * -------------------------------------------------------
  */
-
 /* The top bar. */
 #top_section {
 }
@@ -595,7 +589,6 @@ div.bbc_footnotes .meaction {
 #menu_sidebar .linklevel1:hover, #menu_sidebar .listlevel1:hover .linklevel1,
 #menu_current_area > strong > .linklevel1 {
 	text-decoration: none;
-
 	color: #FFFFFF;
 	background: #8CB5D9;
 }
@@ -621,13 +614,10 @@ div.bbc_footnotes .meaction {
 /* Top level subsection indicators. */
 #main_menu .subsections:hover .linklevel1:after {
 	font-size: 1.429em;
-
 	position: absolute;
 	top: 88%;
 	right: 0.4em;
-
 	content: "";
-
 	color: #EEEEEE;
 	text-shadow: 0 4px 0 #6699CC;
 }
@@ -638,9 +628,7 @@ div.bbc_footnotes .meaction {
 
 .admin_menu .subsections:hover .linklevel1:after {
 	font-size: 1.214em;
-
 	top: 72%;
-
 	color: #555555;
 }
 
@@ -670,7 +658,6 @@ div.bbc_footnotes .meaction {
 
 #main_menu .pm_indicator {
 	padding-bottom: 2px;
-
 	border-radius: 8px;
 }
 
@@ -678,16 +665,12 @@ div.bbc_footnotes .meaction {
 	font-size: 0.929em;
 	font-weight: 700;
 	line-height: 1.4em;
-
 	position: relative;
 	z-index: 2;
 	top: -0.5em;
 	right: -2.5em;
-
 	float: left;
-
 	padding: 0 0.4em;
-
 	color: #FFFFFF;
 	border-radius: 8px;
 	background: #6699CC;
@@ -706,16 +689,12 @@ div.bbc_footnotes .meaction {
 	font-size: 0.857em;
 	font-weight: bold;
 	line-height: 1.5em;
-
 	position: absolute;
 	z-index: 2;
 	top: -1em;
 	right: -0.4em;
-
 	float: left;
-
 	padding: 0 0.6em;
-
 	color: #FFFFFF;
 	border: 1px solid #555555;
 	border-radius: 0;
@@ -732,7 +711,6 @@ div.bbc_footnotes .meaction {
 /* Admin menu icons. */
 .linklevel2 > img {
 	margin: 0 0 0 -4px;
-
 	vertical-align: middle;
 }
 
@@ -740,11 +718,9 @@ div.bbc_footnotes .meaction {
 #main_menu .listlevel2.subsections .linklevel2:after {
 	font-size: 1em;
 	font-weight: 700;
-
 	position: relative;
 	top: 0;
 	left: 0.25em;
-
 	content: "\2193";
 }
 
@@ -759,13 +735,10 @@ div.bbc_footnotes .meaction {
 #menu_sidebar .subsections .linklevel1:after,
 #menu_sidebar .subsections:hover .linklevel1:after {
 	font-size: 1.286em;
-
 	position: absolute;
 	top: 0;
 	right: 16px;
-
 	content: "\2192";
-
 	color: #666666;
 }
 
@@ -786,11 +759,10 @@ div.bbc_footnotes .meaction {
 }
 
 /* End sidebar flyout coding. */
-
 /*	$MENUS		*/
 /* ------------------------------------------------------- */
 /* General styling, basically any menu thats not the top menu. */
-.linklevel1, .linklevel1:link, .linklevel1:visited {
+.linklevel1, .linklevel1:link, .linklevel1:visited, .quickbuttons .inline_mod_check {
 	color: #566E4B;
 	border: 1px solid #AFAFAF;
 	border-top: 1px solid #CFCFCF;
@@ -805,7 +777,6 @@ div.bbc_footnotes .meaction {
 .linklevel2:hover, .listlevel2:hover .linklevel2,
 .linklevel3:hover, .listlevel3:hover .linklevel3 {
 	text-decoration: none;
-
 	color: #555555;
 	border: 1px solid #CCCCCC;
 	border-top: 1px solid #AFAFAF;
@@ -825,13 +796,9 @@ div.bbc_footnotes .meaction {
 
 .poster li.poster_online .nolink {
 	line-height: 2em;
-
 	position: relative;
-
 	display: block;
-
 	margin: 3px 1.5em;
-
 	color: #566E4B;
 	border: 1px solid #AFAFAF;
 	border-top: 1px solid #CFCFCF;
@@ -853,7 +820,6 @@ div.bbc_footnotes .meaction {
 /* Level 1 active buttons. */
 .linklevel1.active, .listlevel1:hover .active {
 	font-weight: bold;
-
 	color: #FFFFFF;
 	background: #3C5972;
 	box-shadow: 1px 1px 2px #BBBBBB;
@@ -869,15 +835,12 @@ div.bbc_footnotes .meaction {
 /* Corrections for other menus. */
 .quickbuttons .subsections:hover .linklevel1:after {
 	font-size: 1em;
-
 	top: 1.9em;
 }
 
 .subsections:hover .name.linklevel1:after {
 	font-size: 1em;
-
 	top: 1.6em;
-
 	color: #5BA048;
 }
 
@@ -897,10 +860,8 @@ div.bbc_footnotes .meaction {
 
 .poster {
 	position: relative;
-
 	margin-left: 5px;
 	padding: 5px;
-
 	border: 1px solid #D3D3D3;
 	border-radius: 3px;
 	background: #E2E2E2;
@@ -918,16 +879,12 @@ div.bbc_footnotes .meaction {
 
 .pointer {
 	line-height: 0;
-
 	position: absolute;
 	top: 20px;
 	right: -10px;
-
 	display: block;
-
 	width: 0;
 	height: 0;
-
 	border: 10px solid transparent;
 	border-right: none;
 	border-left-color: #E2E2E2;
@@ -936,7 +893,6 @@ div.bbc_footnotes .meaction {
 .poster .membergroup {
 	margin: 0 -12px;
 	padding: 3px 0;
-
 	border: 1px solid #D3D3D3;
 	background: #F2F2F2;
 }
@@ -945,14 +901,10 @@ div.bbc_footnotes .meaction {
 	position: absolute;
 	top: -8px;
 	left: -11px;
-
 	display: block;
-
 	width: 10px;
 	height: 0;
-
 	content: "";
-
 	border-top: 7px solid transparent;
 	border-right: 7px solid #D3D3D3;
 }
@@ -961,14 +913,10 @@ div.bbc_footnotes .meaction {
 	position: absolute;
 	top: -8px;
 	right: -11px;
-
 	display: block;
-
 	width: 10px;
 	height: 0;
-
 	content: "";
-
 	border-top: 7px solid transparent;
 	border-left: 7px solid #D3D3D3;
 }
@@ -980,10 +928,8 @@ div.bbc_footnotes .meaction {
 .billboard {
 	float: left;
 	overflow: auto;
-
 	box-sizing: border-box;
 	width: 33%;
-
 	text-align: center;
 }
 
@@ -1019,7 +965,6 @@ div.bbc_footnotes .meaction {
 /* Admin menu icons. */
 .linklevel2 > img {
 	margin: 0 0 0 -4px;
-
 	vertical-align: middle;
 }
 
@@ -1032,7 +977,6 @@ div.bbc_footnotes .meaction {
  *	$LINKTREE
  * -------------------------------------------------------
  */
-
 /* Wrapper/background. */
 .navigate_section {
 	border: 1px solid #CCCCCC;
@@ -1081,7 +1025,6 @@ div.bbc_footnotes .meaction {
  * Declarations are amalgamated where styling is shared.
  * -------------------------------------------------------
  */
-
 /* Styles for the standard button lists.
 /* @todo - Save code by amalgamating common button background declarations. */
 .buttonlist li a.linklevel1 {
@@ -1105,15 +1048,12 @@ div.bbc_footnotes .meaction {
 }
 
 /* Cancel generic border-radius. */
-.quickbuttons .linklevel1 {
+.quickbuttons .linklevel1, .quickbuttons .inline_mod_check {
 	color: #555555;
 	border-color: #AFAFAF;
 	border-top-color: #BBBBBB;
 	background-image: linear-gradient(to bottom, #FCFCFC, #E5E5E4);
 	box-shadow: 1px 1px 2px #E5E5E5, 0 -1px 0 #E4E4E4 inset;
-}
-
-.quickbuttons .inline_mod_check {
 }
 
 /* Radius left end of the first (Quote) button. */
@@ -1132,7 +1072,6 @@ div.bbc_footnotes .meaction {
  *	$PAGELINKS
  * -------------------------------------------------------
  */
-
 .selectbox, .pagelinks {
 	color: #585858;
 }
@@ -1197,7 +1136,6 @@ div.bbc_footnotes .meaction {
  *	$TABLES
  * -------------------------------------------------------
  */
-
 /* A general table class. */
 .table_grid {
 	border-color: #DDDDDD;
@@ -1242,7 +1180,6 @@ div.bbc_footnotes .meaction {
  * $SETTINGS
  * -------------------------------------------------------
  */
-
 /* Lists - settings use these a lot. */
 .settings label {
 	color: #585858;
@@ -1257,7 +1194,6 @@ div.bbc_footnotes .meaction {
  *    .content_category for general divisions around the place.
  * All styled the same in default variant, but available for fun and games.
  */
-
 /* The board categories and newsfader - some shared styling. */
 .forum_category, .content_category {
 	background: #DEEDDA;
@@ -1395,7 +1331,6 @@ div.bbc_footnotes .meaction {
 }
 
 .qaction_row {
-	background: #FEFEFE;
 }
 
 .approvetopic_row, .approve_row {
@@ -1430,7 +1365,6 @@ div.bbc_footnotes .meaction {
  *	$TOPICS
  * -------------------------------------------------------
  */
-
 /* Poll vote options */
 #poll_options .options {
 	border-top-color: #DDDDDD;
@@ -1560,18 +1494,17 @@ div.bbc_footnotes .meaction {
 	color: #CCCCCC;
 }
 
-.new_post_separator {
-	display: block;
-}
-
-.new_post_separator:after, .new_post_separator:before {
-	border-width: 10px 10px 0;
-	border-style: solid;
+.new_post_separator:after {
 	border-color: #E4E4E4 transparent;
 }
 
 .new_post_separator:before {
 	border-color: #BBBBBB transparent;
+}
+
+.new_post_separator {
+	display: block;
+	overflow: visible;
 }
 
 /* Used by video embed JS when autolinking video links */
@@ -1599,7 +1532,6 @@ div.bbc_footnotes .meaction {
  *	$EDITOR
  * -------------------------------------------------------
  */
-
 /* The main post editor section. */
 #preview_body {
 	border-color: #DDDDDD;
@@ -1684,7 +1616,6 @@ div.bbc_footnotes .meaction {
 /* ------------------------------------------------------- */
 /*	$MODERATE	                                           */
 /* ------------------------------------------------------- */
-
 .split_messages .post {
 	border-top-color: #FEFEFE;
 }
@@ -1693,7 +1624,6 @@ div.bbc_footnotes .meaction {
  * $TABS
  * -------------------------------------------------------
  */
-
 .ui-tabs .ui-tabs-panel {
 	border-color: #DDDDDD;
 	border-top-color: #CCCCCC;
@@ -1746,7 +1676,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  * $PROFILE
  * -------------------------------------------------------
  */
-
 #profile_attachments {
 	border-color: #CCCCCC;
 	background: #EEEEEE;
@@ -1835,7 +1764,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  * $PERSONAL
  * -------------------------------------------------------
  */
-
 #personal_messages .capacity_bar {
 	border-color: #AFAFAF;
 }
@@ -1864,7 +1792,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  * $CALENDAR
  * -------------------------------------------------------
  */
-
 .birthday {
 	color: #920AC4;
 }
@@ -1929,7 +1856,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *	$HELP
  * -------------------------------------------------------
  */
-
 #helpmain {
 	border-color: #CCCCCC;
 	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
@@ -1970,7 +1896,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *	$SEARCH
  * -------------------------------------------------------
  */
-
 #mlsearch_options {
 	border-color: #DDDDDD;
 	background: #FAFAFA;
@@ -2026,7 +1951,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *	$LOGIN
  * -------------------------------------------------------
  */
-
 .coppa_contact {
 	color: #585858;
 	border-color: #585858;
@@ -2045,7 +1969,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *	$BOXES
  * -------------------------------------------------------
  */
-
 /* Lotsa boxes. */
 .description, .information, .warningbox, .successbox, .infobox, .errorbox {
 	border-color: #CCCCCC;
@@ -2089,7 +2012,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *	$PROGRESS
  * -------------------------------------------------------
  */
-
 .progress_bar {
 	border-color: black;
 	background: white;
@@ -2112,7 +2034,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  * $STATISTICS
  * -------------------------------------------------------
  */
-
 .statistics .category_header {
 	border-bottom-color: #CCCCCC;
 	background: none;
@@ -2155,7 +2076,7 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
 }
 
 #like_post_stats_overlay {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, .5);
 }
 
 /* floating error box currently used by like functionality */
@@ -2210,14 +2131,11 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *
  * -------------------------------------------------------
  */
-
 /* Helpers */
-
 /*.icon-shade, .chevricon, button.icon, button > .icon, a > .icon, a.icon, a.warnicon, a > .warnicon, a.noticon, a > .infoicon {
 	-webkit-filter: drop-shadow(.1em .1em .1em rgba(0, 0, 0, 0.2));
 	filter: drop-shadow(.1em .1em .1em rgba(0, 0, 0, 0.2));
 } */
-
 /* , .board_icon */
 /*.icon-shadow {
 	-webkit-filter: drop-shadow(.1em .1em .1em rgba(0, 0, 0, 0.5));
@@ -2228,13 +2146,11 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
 	-webkit-filter: drop-shadow(.1em .1em .1em rgba(255, 255, 255, 0.2));
 	filter: drop-shadow(.1em .1em .1em rgba(255, 255, 255, 0.2));
 } */
-
 /* , .board_icon:hover */
 /*.icon-shadow:hover {
 	-webkit-filter: drop-shadow(.1em .1em .1em rgba(255, 255, 255, 0.5));
 	filter: drop-shadow(.1em .1em .1em rgba(255, 255, 255, 0.5));
 } */
-
 .warnicon {
 	border-color: #E86100;
 }
@@ -2275,7 +2191,6 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
  *
  * Of course, having comments to map em to px for each query is a good idea too.
  */
-
 /* This one does 1024 screens at default font size. */
 @media screen and (max-width: 64em) {
 	#menu_sidebar {
@@ -2293,6 +2208,7 @@ li.ui-tab.ui-tabs-active.ui-state-active.ui-state-hover .ui-tabs-anchor {
 	}
 
 	.listlevel1#button_profile .linklevel1 {
+		min-width: initial;
 	}
 
 	.mlist li div.posts {
