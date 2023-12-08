@@ -39,7 +39,7 @@ function template_build_poster_div($message, $ignoring = false)
 								</a>';
 	else
 		$poster_div .= '
-								<a class="linklevel1 name">
+								<a class="linklevel1 name" style="min-height: 40px;">
 									' . $message['member']['name'] . '
 								</a>';
 

@@ -432,7 +432,7 @@ div.bbc_footnotes .meaction {
 }
 
 #siteslogan {
-	color: #CCCCCC;
+	color: #304B24;
 }
 
 /* Maintenance mode warning. */
@@ -657,8 +657,8 @@ div.bbc_footnotes .meaction {
 }
 
 #main_menu .pm_indicator {
-	padding-bottom: 2px;
-	border-radius: 8px;
+	padding: 0 3px 2px 2px;
+	border-radius: 4px;
 }
 
 .poster_online .pm_indicator {
@@ -881,13 +881,13 @@ div.bbc_footnotes .meaction {
 	line-height: 0;
 	position: absolute;
 	top: 20px;
-	right: -10px;
+	right: -9px;
 	display: block;
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
 	border-right: none;
-	border-left-color: #E2E2E2;
+	border-left-color: #D3D3D3;
 }
 
 .poster .membergroup {
@@ -899,7 +899,7 @@ div.bbc_footnotes .meaction {
 
 .poster .membergroup::before {
 	position: absolute;
-	top: -8px;
+	top: -7px;
 	left: -11px;
 	display: block;
 	width: 10px;
@@ -911,7 +911,7 @@ div.bbc_footnotes .meaction {
 
 .poster .membergroup::after {
 	position: absolute;
-	top: -8px;
+	top: -7px;
 	right: -11px;
 	display: block;
 	width: 10px;

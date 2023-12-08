@@ -1212,9 +1212,11 @@ a.bbc_link {
 }
 
 #siteslogan {
-	font-size: 0.65em;
+	font-size: 1.1em;
 	display: block;
 	clear: both;
+	padding: 0 12px;
+
 }
 
 /* Tweak the logo */
@@ -2536,7 +2538,7 @@ nav > .quickbuttons {
 
 .topic_sorting > li {
 	float: right;
-	padding: 0 3px;
+	padding: 2px 3px 0 3px;
 }
 
 .topic_sorting {
@@ -2729,7 +2731,7 @@ img.new_posts {
 .i-last_post {
 	display: inline-block;
 	margin-top: 4px;
-	padding: 0 0 0 9px;
+	padding: 0;
 }
 
 .topic_moderation, .topic_moderation_alt {
@@ -2795,7 +2797,7 @@ img.new_posts {
 	float: right;
 	width: 1.15em;
 	height: 1.15em;
-	margin-right: -1.15em;
+	margin-right: -1.05em;
 	content: "";
 }
 
@@ -3037,6 +3039,7 @@ img.new_posts {
 .poster_container {
 	float: left;
 	width: 14em;
+	padding-left: 4px;
 }
 
 .poster.poster2 .name {
@@ -6630,7 +6633,7 @@ a > i {
 	}
 
 	.board_info h3 a {
-		font-size: 1.357em;
+		font-size: 1.157em;
 		word-wrap: break-word;
 	}
 
@@ -6652,6 +6655,7 @@ a > i {
 
 	.icon_anchor {
 		min-width: 0;
+		margin-top: -6px;
 	}
 
 	.lastpost_link, .board_lastposter {

@@ -9,7 +9,7 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.1.4
+ * @version 1.1.9
  *
  */
 
@@ -186,7 +186,7 @@ function template_topic_listing()
 				echo '
 					<div class="board_avatar', ($topic['is_posted_in'] ? ' fred' : ''), '">
 						<a href="', $topic['last_post']['member']['href'], '">
-							<img class="avatar" src="', $topic['last_post']['member']['avatar']['href'], '" alt="" />
+							<img class="avatar" src="', $topic['last_post']['member']['avatar']['href'], '" alt="" loading="lazy" />
 						</a>
 					</div>';
 			}
